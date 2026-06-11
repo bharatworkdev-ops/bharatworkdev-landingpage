@@ -31,8 +31,7 @@ const Footer = () => {
               BharatWork
             </a>
             <p className="text-sm text-text-secondary leading-relaxed mb-6">
-              India’s Innovation Network for Builders, Founders & Creators.
-              Organizing the startup ecosystem one connection at a time.
+              India's AI-powered labour marketplace connecting workers with verified employers through technology, trust, and opportunity.
             </p>
             <div className="flex gap-4">
               <a
@@ -136,23 +135,23 @@ const Footer = () => {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="mailto:pandeyayush4101@gmail.com"
+                  href="mailto:info@thebharatwork.com"
                   className="flex items-center gap-3 text-text-secondary hover:text-action transition-colors text-sm break-all"
                 >
-                  <FaEnvelope className="text-lg" />
-                  <span>pandeyayush4101@gmail.com</span>
+                 <FaEnvelope className="text-lg" />
+                 <span>info@thebharatwork.com</span>
                 </a>
               </li>
               <li>
-                <a
-                  href="tel:+919876543210"
-                  className="flex items-center gap-3 text-text-secondary hover:text-action transition-colors text-sm"
+               <a
+                 href="tel:+919454144272"
+                 className="flex items-center gap-3 text-text-secondary hover:text-action transition-colors text-sm"
                 >
-                  <FaPhoneAlt className="text-lg" />
-                  <span>+91 9876543210</span>
-                </a>
+                 <FaPhoneAlt className="text-lg" />
+                 <span>+91 9454144272</span>
+               </a>
               </li>
-            </ul>
+            </ul> 
           </div>
         </div>
 
