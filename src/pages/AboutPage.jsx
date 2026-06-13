@@ -375,10 +375,10 @@ const AboutPage = () => {
                 </h3>
                 <div className="space-y-4">
                   {[
-                    { icon: <FaEnvelope />, label: "General Inquiries", value: "hello@bharatwork.com", href: "mailto:hello@bharatwork.com" },
-                    { icon: <FaHandshake />, label: "Partnerships & Collaborations", value: "partnerships@bharatwork.com", href: "mailto:partnerships@bharatwork.com" },
-                    { icon: <FaUsers />, label: "For Hiring / Employers", value: "hire@bharatwork.com", href: "mailto:hire@bharatwork.com" },
-                    { icon: <FaPhoneAlt />, label: "Support (Workers & Job Seekers)", value: "+91 XXXXX XXXXX", href: null },
+                    { icon: <FaEnvelope />, label: "General Inquiries", value: "info@thebharatwork.com", href: "mailto:info@thebharatwork.com" },
+                    { icon: <FaHandshake />, label: "Partnerships & Collaborations", value: "info@thebharatwork.com", href: "mailto:info@thebharatwork.com" },
+                    { icon: <FaUsers />, label: "For Hiring / Employers", value: "info@thebharatwork.com", href: "mailto:info@thebharatwork.com" },
+                    { icon: <FaPhoneAlt />, label: "Support (Workers & Job Seekers)", value: "+91 9454144272", href: "tel:+919454144272" },
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-4 group">
                       <div className="w-12 h-12 rounded-full bg-card border border-border-light flex items-center justify-center text-text-secondary group-hover:text-action group-hover:border-action transition-colors shadow-sm">
