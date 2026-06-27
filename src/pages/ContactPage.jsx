@@ -164,7 +164,7 @@ const ContactPage = () => {
               </ul>
               <div className="inline-flex items-center gap-3 bg-action/10 px-5 py-3 rounded-xl border border-action/25">
                 <FaEnvelope className="text-action text-lg shrink-0" />
-                <a href="mailto:careers@bharatwork.com" className="text-action text-sm font-bold hover:underline">careers@bharatwork.com</a>
+                <a href="mailto:info@thebharatwork.com" className="text-action text-sm font-bold hover:underline">info@thebharatwork.com</a>
               </div>
             </div>
 
