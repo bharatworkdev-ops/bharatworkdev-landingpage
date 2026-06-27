@@ -45,7 +45,7 @@ const FAQ = () => {
     {
       question: "What is BharatWork?",
       answer:
-        "BharatWork is India's first dedicated digital marketplace designed for the unorganized blue-collar workforce. We connect daily wage workers (such as masons, electricians, painters, carpenters, and helpers) directly with contractors, builders, SMEs, and individual employers, eliminating middleman markups and hiring delays.",
+        "BharatWork is India's first dedicated digital labour booking platform designed for the unorganized blue-collar workforce. We connect daily wage workers (such as masons, electricians, painters, carpenters, and helpers) directly with contractors, builders, MSMEs, and individual employers, eliminating middleman markups and hiring delays.",
     },
     {
       question: "How does BharatWork verify worker profiles?",
