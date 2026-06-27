@@ -208,6 +208,8 @@ const Hero = ({ role }) => {
                     exit={{ x: -80, opacity: 0 }}
                     transition={{ type: "spring", stiffness: 200, damping: 22 }}
                     className="absolute inset-0 w-full h-full object-cover"
+                    loading="eager"
+                    fetchPriority="high"
                   />
                 </AnimatePresence>
               </div>

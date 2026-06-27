@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 import SEO from '../components/SEO';
 import Hero from '../components/Hero';
@@ -8,6 +9,7 @@ import Services from '../components/Services';
 import WhatIsBharatWork from '../components/WhatIsBharatWork';
 import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
+import step1Img from '../assets/webp/step-1.webp';
 
 const LandingPage = () => {
   const { userRole } = useAuth();
@@ -101,6 +103,9 @@ const LandingPage = () => {
         schemaMarkup={schemaMarkup}
         faqMarkup={faqMarkup}
       />
+      <Helmet>
+        <link rel="preload" as="image" href={step1Img} />
+      </Helmet>
       <main className="grow">
         {/* Dynamic Hero Section */}
         <Hero role={activeRole} onLogin={handleLogin} />

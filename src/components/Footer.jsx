@@ -27,6 +27,8 @@ const Footer = () => {
               <img 
                 src={logoImg} 
                 alt="BharatWork Logo" 
+                width="150"
+                height="40"
                 className="h-10 w-auto object-contain"
               />
             </Link>
