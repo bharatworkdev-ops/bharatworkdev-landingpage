@@ -6,6 +6,7 @@ import {
   FaRupeeSign, FaClipboardCheck, FaChartLine, FaShieldAlt
 } from "react-icons/fa";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
 
 const EmployerInfoPage = () => {
   const navigate = useNavigate();
@@ -45,6 +46,10 @@ const EmployerInfoPage = () => {
 
   return (
     <div className="min-h-screen bg-screen text-text-primary font-sans overflow-x-hidden selection:bg-action/30 selection:text-action pt-20 flex flex-col justify-between">
+      <SEO 
+        title="Hire Verified Daily Workers | BharatWork"
+        description="Connect with KYC-verified daily-wage labourers including builders, electricians, painters, and carpenters. Match in under 10 minutes."
+      />
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-screen via-white to-screen pointer-events-none -z-10"></div>
       <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-gradient-to-br from-action/5 via-orange-400/5 to-transparent rounded-full filter blur-[120px] pointer-events-none -z-10"></div>

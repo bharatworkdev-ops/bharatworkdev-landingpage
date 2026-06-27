@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
 import {
   FaPhoneAlt,
   FaGlobe,
@@ -61,8 +62,24 @@ const AboutPage = () => {
     { icon: <FiGlobe />, title: "Built specifically for India's", desc: "Informal workforce" },
   ];
 
+  const aboutSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "BharatWork",
+      "url": "https://thebharatwork.com",
+      "description": "BharatWork is building India's most accessible and inclusive job ecosystem for the unorganized blue-collar workforce."
+    }
+  };
+
   return (
     <div className="min-h-screen bg-screen text-text-primary font-sans overflow-x-hidden selection:bg-action/30 selection:text-action pt-20">
+      <SEO 
+        title="About Us | BharatWork"
+        description="Learn about the mission, values, and founders of BharatWork. We are building India's most accessible and inclusive blue-collar hiring platform."
+        schemaMarkup={aboutSchema}
+      />
       {/* Hero Section */}
       <section className="relative pt-16 pb-16 overflow-hidden bg-gradient-to-b from-card to-screen">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-action/10 rounded-full blur-[100px] -z-10 mix-blend-multiply pointer-events-none"></div>
@@ -351,6 +368,7 @@ const AboutPage = () => {
                     <img
                       src={member.image}
                       alt={member.name}
+                      loading="lazy"
                       className="w-28 h-28 rounded-full mb-6 border-4 border-card shadow-lg group-hover:scale-105 transition-transform duration-300 object-cover"
                     />
                     <h4 className="text-xl font-bold text-text-primary mb-1">{member.name}</h4>

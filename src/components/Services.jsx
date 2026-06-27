@@ -15,14 +15,14 @@ import {
 } from "react-icons/fa";
 
 // Import user-provided service images
-import helperImg from "../assets/helper.png";
-import constructionWorkerImg from "../assets/construction-worker.png";
-import masonImg from "../assets/mason.png";
-import carpenterImg from "../assets/carpenter.png";
-import welderImg from "../assets/welder.png";
-import painterImg from "../assets/painter.png";
-import factoryWorkerImg from "../assets/factory-worker.png";
-import onboardingImg from "../assets/onboarding.png";
+import helperImg from "../assets/webp/helper.webp";
+import constructionWorkerImg from "../assets/webp/construction-worker.webp";
+import masonImg from "../assets/webp/mason.webp";
+import carpenterImg from "../assets/webp/carpenter.webp";
+import welderImg from "../assets/webp/welder.webp";
+import painterImg from "../assets/webp/painter.webp";
+import factoryWorkerImg from "../assets/webp/factory-worker.webp";
+import onboardingImg from "../assets/webp/onboarding.webp";
 
 const Services = () => {
   const [selectedId, setSelectedId] = useState(null);
@@ -264,6 +264,7 @@ const Services = () => {
                     <img
                       src={service.image}
                       alt={service.title}
+                      loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-500"
                     />
                     {/* Floating Icon Badges */}

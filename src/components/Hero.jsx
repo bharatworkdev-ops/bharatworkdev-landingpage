@@ -8,9 +8,9 @@ import {
 import { MdAndroid } from "react-icons/md";
 
 // Import step images
-import step1Img from "../assets/step-1.png";
-import step2Img from "../assets/step-2.png";
-import step3Img from "../assets/step-3.png";
+import step1Img from "../assets/webp/step-1.webp";
+import step2Img from "../assets/webp/step-2.webp";
+import step3Img from "../assets/webp/step-3.webp";
 
 const Hero = ({ role }) => {
   const activeRole = role || "employer";

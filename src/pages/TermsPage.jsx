@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FaFileContract, FaArrowLeft, FaShieldAlt } from "react-icons/fa";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
 
 const TermsPage = () => {
   useEffect(() => {
@@ -11,6 +12,10 @@ const TermsPage = () => {
 
   return (
     <div className="min-h-screen bg-screen text-text-primary font-sans pt-28 flex flex-col justify-between">
+      <SEO 
+        title="Terms of Service | BharatWork"
+        description="Read the terms of service of BharatWork. Understand worker responsibilities, employer requirements, and billing/platform policies."
+      />
       <main className="grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
         {/* Back Link */}
         <motion.div

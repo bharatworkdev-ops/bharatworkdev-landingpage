@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 import { FiGlobe } from "react-icons/fi";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({ name: "", phone: "", email: "", message: "" });
@@ -30,8 +31,30 @@ const ContactPage = () => {
     setFormData({ name: "", phone: "", email: "", message: "" });
   };
 
+  const contactSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "BharatWork",
+      "url": "https://thebharatwork.com",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-9454144272",
+        "contactType": "customer support",
+        "email": "info@thebharatwork.com",
+        "areaServed": "IN"
+      }
+    }
+  };
+
   return (
     <div className="min-h-screen bg-screen text-text-primary font-sans pt-28 flex flex-col justify-between relative overflow-hidden">
+      <SEO 
+        title="Contact Us | BharatWork"
+        description="Get in touch with the BharatWork team for support, partnerships, or integration options. We are here to help."
+        schemaMarkup={contactSchema}
+      />
       {/* Background Decorative Orbs */}
       <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-gradient-to-br from-action/5 via-orange-400/5 to-transparent rounded-full mix-blend-screen filter blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-gradient-to-tl from-gradient-end/5 via-amber-400/5 to-transparent rounded-full mix-blend-screen filter blur-[100px] pointer-events-none"></div>

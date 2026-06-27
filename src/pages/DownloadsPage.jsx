@@ -9,9 +9,10 @@ import {
   FaBell, FaHistory, FaTimes
 } from "react-icons/fa";
 import Footer from "../components/Footer";
-import app1 from "../assets/app1.png";
-import app2 from "../assets/app2.png";
-import app3 from "../assets/app3.png";
+import SEO from "../components/SEO";
+import app1 from "../assets/webp/Screenshot_1782380912.webp";
+import app2 from "../assets/webp/Screenshot_1782380984.webp";
+import app3 from "../assets/webp/Screenshot_1782381000.webp";
 
 const DownloadsPage = () => {
   const navigate = useNavigate();
@@ -95,8 +96,27 @@ const DownloadsPage = () => {
     },
   ];
 
+  const appSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "BharatWork Mobile App",
+    "operatingSystem": "Android, iOS",
+    "applicationCategory": "BusinessApplication, Utilities",
+    "offers": {
+      "@type": "Offer",
+      "price": "0.00",
+      "priceCurrency": "INR"
+    },
+    "description": "Download the official BharatWork application. Connect directly with verified manual workers or find hiring opportunities in under 10 minutes."
+  };
+
   return (
     <div className="min-h-screen bg-screen text-text-primary font-sans overflow-x-hidden selection:bg-action/30 selection:text-action pt-20 flex flex-col justify-between">
+      <SEO 
+        title="Download BharatWork App | BharatWork"
+        description="Download the official BharatWork mobile app for employers and workers. Hire verified labour or find local daily-wage jobs in minutes."
+        schemaMarkup={appSchema}
+      />
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-screen via-white to-screen pointer-events-none"></div>
       <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-gradient-to-br from-action/5 via-orange-400/5 to-transparent rounded-full mix-blend-screen filter blur-[120px] pointer-events-none"></div>

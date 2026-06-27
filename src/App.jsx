@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
+import { HelmetProvider } from "react-helmet-async";
 
 // Layouts
 import EmployerLayout from "./layouts/EmployerLayout";
@@ -73,46 +74,48 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
-      <AuthProvider>
-        <ScrollToHashElement />
-        <Navbar />
-        <Routes>
-          {/* Public Routes */}
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/team" element={<TeamPage />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/privacy" element={<PrivacyPage />} />
-          <Route path="/terms" element={<TermsPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/downloads" element={<DownloadsPage />} />
-          <Route path="/employer-info" element={<EmployerInfoPage />} />
-          <Route path="/demopage" element={<DemoPage />} />
+    <HelmetProvider>
+      <BrowserRouter>
+        <AuthProvider>
+          <ScrollToHashElement />
+          <Navbar />
+          <Routes>
+            {/* Public Routes */}
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/team" element={<TeamPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
+            <Route path="/terms" element={<TermsPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/downloads" element={<DownloadsPage />} />
+            <Route path="/employer-info" element={<EmployerInfoPage />} />
+            <Route path="/demopage" element={<DemoPage />} />
 
-          {/* Employer Routes */}
-          <Route path="/employer" element={<EmployerLayout />}>
-            <Route path="auth/login" element={<LoginPage />} />
-            <Route path="auth/signup" element={<SignupPage />} />
-            <Route path="auth/forgot-password" element={<ForgotPasswordPage />} />
-            <Route path="dashboard" element={<EmployerDashboard />} />
-            <Route index element={<Navigate to="/employer/auth/login" replace />} />
-          </Route>
+            {/* Employer Routes */}
+            <Route path="/employer" element={<EmployerLayout />}>
+              <Route path="auth/login" element={<LoginPage />} />
+              <Route path="auth/signup" element={<SignupPage />} />
+              <Route path="auth/forgot-password" element={<ForgotPasswordPage />} />
+              <Route path="dashboard" element={<EmployerDashboard />} />
+              <Route index element={<Navigate to="/employer/auth/login" replace />} />
+            </Route>
 
-          {/* Labour Routes */}
-          <Route path="/labour" element={<LabourLayout />}>
-            <Route path="auth/login" element={<LoginPage />} />
-            <Route path="auth/signup" element={<SignupPage />} />
-            <Route path="auth/forgot-password" element={<ForgotPasswordPage />} />
-            <Route path="dashboard" element={<LabourDashboard />} />
-            <Route index element={<Navigate to="/labour/auth/login" replace />} />
-          </Route>
+            {/* Labour Routes */}
+            <Route path="/labour" element={<LabourLayout />}>
+              <Route path="auth/login" element={<LoginPage />} />
+              <Route path="auth/signup" element={<SignupPage />} />
+              <Route path="auth/forgot-password" element={<ForgotPasswordPage />} />
+              <Route path="dashboard" element={<LabourDashboard />} />
+              <Route index element={<Navigate to="/labour/auth/login" replace />} />
+            </Route>
 
-          {/* Catch all - redirect to home */}
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </AuthProvider>
-    </BrowserRouter>
+            {/* Catch all - redirect to home */}
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </AuthProvider>
+      </BrowserRouter>
+    </HelmetProvider>
   );
 }
 

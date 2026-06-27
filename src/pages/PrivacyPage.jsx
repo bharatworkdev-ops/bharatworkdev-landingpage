@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FaShieldAlt, FaArrowLeft, FaFileContract, FaLock } from "react-icons/fa";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
 
 const PrivacyPage = () => {
   useEffect(() => {
@@ -11,6 +12,10 @@ const PrivacyPage = () => {
 
   return (
     <div className="min-h-screen bg-screen text-text-primary font-sans pt-28 flex flex-col justify-between">
+      <SEO 
+        title="Privacy Policy | BharatWork"
+        description="Read the privacy policy of BharatWork. Understand how we collect, store, verify, and protect worker and employer data."
+      />
       <main className="grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
         {/* Back Link */}
         <motion.div

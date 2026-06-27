@@ -2,10 +2,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaCalendar, FaClock, FaAward, FaNewspaper, FaExternalLinkAlt } from "react-icons/fa";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
 
 // Import custom generated thumbnails
-import gseaThumb from "../assets/gsea_award_thumb.png";
-import tieThumb from "../assets/tie_pitch_thumb.png";
+import gseaThumb from "../assets/webp/gsea_award_thumb.webp";
+import tieThumb from "../assets/webp/tie_pitch_thumb.webp";
 
 const BlogPage = () => {
   const actualBlogs = [
@@ -35,8 +36,30 @@ const BlogPage = () => {
     }
   ];
 
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "BharatWork Blog & News",
+    "url": "https://thebharatwork.com/blog",
+    "description": "Read the latest press releases, startup wins, and updates from the BharatWork team.",
+    "blogPost": actualBlogs.map((blog) => ({
+      "@type": "BlogPosting",
+      "headline": blog.title,
+      "description": blog.excerpt,
+      "publisher": {
+        "@type": "Organization",
+        "name": blog.publisher
+      }
+    }))
+  };
+
   return (
     <div className="min-h-screen bg-screen text-text-primary font-sans overflow-x-hidden pt-20 flex flex-col justify-between relative">
+      <SEO 
+        title="Blog & News | BharatWork"
+        description="Stay updated with BharatWork's latest developments, press coverage, milestones, and impact stories from the ground."
+        schemaMarkup={blogSchema}
+      />
       {/* Decorative Background Elements */}
       <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-gradient-to-br from-action/5 via-orange-400/5 to-transparent rounded-full filter blur-[120px] pointer-events-none -z-10"></div>
       <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-gradient-to-tl from-gradient-end/5 via-amber-400/5 to-transparent rounded-full filter blur-[100px] pointer-events-none -z-10"></div>
@@ -91,6 +114,7 @@ const BlogPage = () => {
                     <img
                       src={post.image}
                       alt={post.title}
+                      loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-4 left-4 z-20 flex gap-2">

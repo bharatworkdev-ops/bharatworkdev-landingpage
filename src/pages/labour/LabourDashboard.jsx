@@ -6,7 +6,7 @@ import {
   FaArrowRight, FaShieldAlt, FaMobileAlt, FaHandshake,
   FaCalendarCheck, FaChartLine, FaQuestionCircle
 } from "react-icons/fa";
-import logo from "../../assets/hero-mockup.png";
+import logo from "../../assets/webp/hero-mockup.webp";
 
 const LabourDashboard = () => {
   const [activeTab, setActiveTab] = useState("tour"); // tour, guide, agent
