@@ -62,7 +62,7 @@ const WhatIsBharatWork = ({ role }) => {
               ?
             </h2>
             <p className="text-text-secondary max-w-3xl mx-auto text-lg leading-relaxed mb-6">
-              BharatWork is India's first dedicated platform for the unorganized blue-collar workforce. We bridge unverified hiring gaps by connecting verified workers directly to contractors and daily projects.
+              BharatWork bridges India's unorganized labor gap. We use AI voice agents to connect verified blue-collar workers with MSMEs and factory owners — accessible to anyone with just a basic phone call.
             </p>
             <div className="h-[2px] w-20 bg-action/30 mx-auto rounded-full" />
           </motion.div>
@@ -116,7 +116,7 @@ const WhatIsBharatWork = ({ role }) => {
               <div className="flex justify-between items-center bg-screen rounded-xl p-3 border border-border-light">
                 <div>
                   <div className="text-[10px] text-text-secondary font-bold">DAILY RATE</div>
-                  <div className="text-base font-extrabold text-text-primary">₹850 / Worker</div>
+                  <div className="text-base font-extrabold text-text-primary">₹450 / Worker</div>
                 </div>
                 <div className="text-right">
                   <div className="text-[10px] text-text-secondary font-bold">REQUIRED</div>
