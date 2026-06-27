@@ -127,7 +127,7 @@ const ContactPage = () => {
             </div>
 
             {/* Work With Us */}
-            <div>
+            <div id="work-with-us">
               <h3 className="text-2xl font-bold text-text-primary mb-6 border-b border-border-light pb-2 inline-flex items-center gap-2">
                 <FaRocket className="text-action" /> Work With Us
               </h3>

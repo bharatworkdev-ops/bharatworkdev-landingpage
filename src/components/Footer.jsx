@@ -97,6 +97,14 @@ const Footer = () => {
                   FAQs
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/blog"
+                  className="text-text-secondary hover:text-action transition-colors text-sm"
+                >
+                  Blog & News
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -111,15 +119,15 @@ const Footer = () => {
                   to="/about"
                   className="text-text-secondary hover:text-action transition-colors text-sm"
                 >
-                  About Us
+                  Company
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/blog"
+                  to="/contact#work-with-us"
                   className="text-text-secondary hover:text-action transition-colors text-sm"
                 >
-                  Blog & News
+                  Careers
                 </Link>
               </li>
               <li>
@@ -127,7 +135,7 @@ const Footer = () => {
                   to="/contact"
                   className="text-text-secondary hover:text-action transition-colors text-sm"
                 >
-                  Contact Us
+                  Contact
                 </Link>
               </li>
               <li>
@@ -135,7 +143,7 @@ const Footer = () => {
                   to="/privacy"
                   className="text-text-secondary hover:text-action transition-colors text-sm"
                 >
-                  Privacy Policy
+                  Privacy
                 </Link>
               </li>
               <li>
@@ -143,7 +151,7 @@ const Footer = () => {
                   to="/terms"
                   className="text-text-secondary hover:text-action transition-colors text-sm"
                 >
-                  Terms of Service
+                  Terms
                 </Link>
               </li>
             </ul>
@@ -174,7 +182,7 @@ const Footer = () => {
                   <span className="w-8 h-8 rounded-full bg-card border border-border-medium/30 flex items-center justify-center group-hover:bg-action/10 transition-colors">
                     <FaEnvelope size={12} className="text-text-secondary group-hover:text-action" />
                   </span>
-                  <span>info@thebharatwork.com</span>
+                  <span>Email: info@thebharatwork.com</span>
                 </a>
               </li>
               <li className="flex items-center gap-3 text-text-secondary text-sm">
@@ -183,7 +191,7 @@ const Footer = () => {
                 </span>
                 <span>Lucknow, Uttar Pradesh, India</span>
               </li>
-            </ul> 
+            </ul>
           </div>
         </div>
 
