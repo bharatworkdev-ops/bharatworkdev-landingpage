@@ -99,7 +99,7 @@ const AboutPage = () => {
               BharatWork is building India's most accessible and inclusive job ecosystem—designed especially for the next billion workers who are often left behind by traditional hiring platforms.
             </p>
             <p className="text-base text-text-secondary max-w-3xl mx-auto leading-relaxed">
-              In a country where millions of skilled workers still rely on word-of-mouth for jobs, we are bridging the gap between opportunity and accessibility using technology that works for everyone—<span className="font-bold text-text-primary">not just smartphone users.</span>
+              In a country where millions of unskilled workers still rely on word-of-mouth for jobs, we are bridging the gap between opportunity and accessibility using technology that works for everyone—<span className="font-bold text-text-primary">not just smartphone users.</span>
             </p>
           </motion.div>
         </div>
@@ -147,7 +147,7 @@ const AboutPage = () => {
                 </div>
 
                 <p className="text-lg text-text-secondary leading-relaxed mb-6">
-                  Traditional job platforms require smartphones, active internet, and digital literacy. This excludes millions of skilled daily wage earners, painters, masons, and helpers. 
+                  Traditional job platforms require smartphones, active internet, and digital literacy. This excludes millions of unskilled daily wage workers, painters, masons, and helpers. 
                 </p>
                 <p className="text-lg text-text-secondary leading-relaxed">
                   BharatWork bridges this gap, connecting offline workers with online hiring needs instantly and securely without requiring internet or applications on their end.
