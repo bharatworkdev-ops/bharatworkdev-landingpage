@@ -91,29 +91,15 @@ const Hero = ({ role }) => {
           {/* ─────────────────────────────────────────────────────────────
              LEFT COLUMN: Typography and Call to Action
           ───────────────────────────────────────────────────────────── */}
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: { opacity: 0 },
-              visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.05 } }
-            }}
-            className="lg:col-span-7 flex flex-col items-start text-left"
-          >
+          <div className="lg:col-span-7 flex flex-col items-start text-left">
             {/* Badge */}
-            <motion.div 
-              variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }} 
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-action/20 shadow-md mb-6"
-            >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-action/20 shadow-md mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-action animate-pulse" />
               <span className="gradient-primary font-bold text-xs tracking-wider uppercase">{content.badge}</span>
-            </motion.div>
+            </div>
 
             {/* Heading */}
-            <motion.h1 
-              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} 
-              className="text-4xl md:text-5xl lg:text-6xl font-black text-text-primary leading-[1.1] mb-6 tracking-tight"
-            >
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-text-primary leading-[1.1] mb-6 tracking-tight">
               {content.title}{" "}
               <span className="relative inline-block mt-1">
                 <span className="gradient-text-hero">{content.highlight}</span>
@@ -121,21 +107,15 @@ const Hero = ({ role }) => {
                   <path d="M2 10C50 2 150 2 198 10" stroke="#EE8311" strokeWidth="3" strokeLinecap="round" className="opacity-40" />
                 </svg>
               </span>
-            </motion.h1>
+            </h1>
 
             {/* Subtitle */}
-            <motion.p 
-              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} 
-              className="text-base md:text-lg text-text-secondary mb-8 max-w-2xl leading-relaxed"
-            >
+            <p className="text-base md:text-lg text-text-secondary mb-8 max-w-2xl leading-relaxed">
               {content.subtitle}
-            </motion.p>
+            </p>
 
             {/* CTAs */}
-            <motion.div 
-              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} 
-              className="flex flex-col sm:flex-row gap-4 mb-10 w-full sm:w-auto"
-            >
+            <div className="flex flex-col sm:flex-row gap-4 mb-10 w-full sm:w-auto">
               <Link
                 to="/downloads"
                 className="group relative flex items-center justify-center gap-3 bg-gradient-to-r from-action to-gradient-end text-white px-8 py-4 rounded-2xl font-bold text-base overflow-hidden shadow-lg hover:shadow-xl hover:shadow-action/25 transition-all duration-300 hover:-translate-y-0.5"
@@ -157,13 +137,10 @@ const Hero = ({ role }) => {
                 </span>
                 Watch Demo
               </Link>
-            </motion.div>
+            </div>
 
             {/* Stats */}
-            <motion.div 
-              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} 
-              className="flex flex-wrap gap-8 lg:gap-10 mb-8 border-t border-border-light pt-8 w-full max-w-xl"
-            >
+            <div className="flex flex-wrap gap-8 lg:gap-10 mb-8 border-t border-border-light pt-8 w-full max-w-xl">
               {content.stats.map((s, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-action/10 to-gradient-end/10 flex items-center justify-center text-action shrink-0">{s.icon}</div>
@@ -173,17 +150,14 @@ const Hero = ({ role }) => {
                   </div>
                 </div>
               ))}
-            </motion.div>
+            </div>
 
             {/* Footer Badge */}
-            <motion.div 
-              variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }} 
-              className="inline-flex items-center gap-2.5 text-xs text-text-secondary bg-white/80 backdrop-blur-sm px-4.5 py-2.5 rounded-full border border-border-light shadow-sm"
-            >
+            <div className="inline-flex items-center gap-2.5 text-xs text-text-secondary bg-white/80 backdrop-blur-sm px-4.5 py-2.5 rounded-full border border-border-light shadow-sm">
               <MdAndroid className="text-base text-action animate-bounce" />
               <span>Mobile Apps coming soon on <span className="font-semibold text-text-primary">Android & iOS</span></span>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
           {/* ─────────────────────────────────────────────────────────────
              RIGHT COLUMN: Interactive Step Slideshow (Minimalist Image & Tabs)

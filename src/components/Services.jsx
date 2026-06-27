@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   FaHandsHelping,
@@ -321,6 +322,15 @@ const Services = () => {
                             </li>
                           ))}
                         </ul>
+                        <div className="mt-5 pt-4 border-t border-border-light">
+                          <Link
+                            to="/downloads"
+                            onClick={(e) => e.stopPropagation()}
+                            className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-action to-gradient-end text-white py-3 rounded-xl font-bold text-xs shadow-md hover:shadow-lg hover:shadow-action/20 transition-all duration-300 hover:-translate-y-0.5"
+                          >
+                            Hire {service.title} Now <FaArrowRight className="text-[9px]" />
+                          </Link>
+                        </div>
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -342,9 +352,18 @@ const Services = () => {
                       <FaArrowLeft className="text-[9px]" /> Collapse Details
                     </button>
                   ) : (
-                    <span className="flex items-center gap-1 text-xs font-bold text-action group-hover:translate-x-1 transition-transform duration-200">
-                      Explore Service <FaArrowRight className="text-[9px]" />
-                    </span>
+                    <div className="flex items-center gap-4">
+                      <span className="flex items-center gap-1 text-xs font-bold text-text-secondary group-hover:text-action transition-colors duration-200">
+                        Explore <FaArrowRight className="text-[9px]" />
+                      </span>
+                      <Link
+                        to="/downloads"
+                        onClick={(e) => e.stopPropagation()}
+                        className="px-3.5 py-1.5 bg-action/10 text-action hover:bg-action hover:text-white rounded-xl text-xs font-extrabold transition-all duration-200"
+                      >
+                        Hire Now
+                      </Link>
+                    </div>
                   )}
                 </div>
               </motion.div>
