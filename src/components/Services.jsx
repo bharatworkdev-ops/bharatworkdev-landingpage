@@ -134,15 +134,15 @@ const Services = () => {
       shadow: "rgba(139, 92, 246, 0.15)",
     },
     {
-      title: "Onboarding & Verification",
+      title: "Loading & Unloading",
       image: onboardingImg,
       icon: <FaUserCheck className="text-xl" />,
-      desc: "Document collection, KYC verification, voice registration assistance, and user training support.",
+      desc: "Loading and unloading of construction materials, warehouse goods, equipment, and commercial deliveries.",
       offers: [
-        "Aadhaar authentication & KYC verification",
-        "Bank account setup and payment routing",
-        "Detailed safety rules and worker handbook",
-        "Voice-guided training for digital tasks"
+        "Loading construction materials and equipment",
+        "Unloading trucks, containers, and deliveries",
+        "Warehouse loading and inventory handling",
+        "Safe handling of heavy goods and materials"
       ],
       gradient: "from-teal-500 to-emerald-500",
       accent: "teal",
