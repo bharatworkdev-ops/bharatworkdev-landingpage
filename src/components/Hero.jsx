@@ -34,7 +34,7 @@ const Hero = ({ role }) => {
       btnText: "Start Hiring Now",
       icon: <FaBriefcase className="text-xl" />,
       stats: [
-        { icon: <FaUsers />,     value: "50K+", label: "Verified Workers" },
+        { icon: <FaUsers />,     value: "1K+", label: "Verified Workers" },
         { icon: <FaShieldAlt />, value: "100%", label: "Secure Payments"  },
         { icon: <FaStar />,      value: "4.9",  label: "App Rating"       },
       ],
