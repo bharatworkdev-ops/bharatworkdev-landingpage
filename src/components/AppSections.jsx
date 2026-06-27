@@ -83,9 +83,8 @@ const AppSections = ({ role, onLogin }) => {
     },
   ];
 
-  if (!role) return null;
-
-  const isEmployer = role === 'employer';
+  const activeRole = role || "employer";
+  const isEmployer = activeRole === 'employer';
   const features = isEmployer ? employerFeatures : labourFeatures;
   const accentColor = isEmployer ? "action" : "amber-500";
   const gradientFrom = isEmployer ? "from-action" : "from-amber-500";

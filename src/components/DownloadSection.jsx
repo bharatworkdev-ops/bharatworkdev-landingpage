@@ -3,9 +3,8 @@ import { motion } from "framer-motion";
 import { FaGooglePlay, FaApple, FaBriefcase, FaHardHat, FaArrowRight, FaRocket } from "react-icons/fa";
 
 const DownloadSection = ({ role, onLogin }) => {
-  if (!role) return null;
-
-  const isEmployer = role === 'employer';
+  const activeRole = role || "employer";
+  const isEmployer = activeRole === 'employer';
   const Icon = isEmployer ? FaBriefcase : FaHardHat;
 
   return (

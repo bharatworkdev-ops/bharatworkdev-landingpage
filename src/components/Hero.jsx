@@ -1,265 +1,256 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { FaBriefcase, FaHardHat, FaPlay, FaStar, FaUsers, FaShieldAlt } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
+import {
+  FaBriefcase, FaHardHat, FaPlay,
+  FaStar, FaUsers, FaShieldAlt
+} from "react-icons/fa";
 import { MdAndroid } from "react-icons/md";
-import app1 from "../assets/app1.jpeg";
-import app2 from "../assets/app2.jpeg";
-import app3 from "../assets/app3.jpeg";
 
-const Hero = ({ role, onLogin }) => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.1,
-      },
-    },
-  };
+// Import step images
+import step1Img from "../assets/step-1.png";
+import step2Img from "../assets/step-2.png";
+import step3Img from "../assets/step-3.png";
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }
-    },
-  };
+const Hero = ({ role }) => {
+  const activeRole = role || "employer";
+  const [currentStep, setCurrentStep] = useState(0);
 
+  // Auto-advance slideshow and sync with progress bar
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentStep((prev) => (prev + 1) % 3);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [currentStep]);
+
+  /* ── Copy and Slides configuration ── */
   const content = {
     employer: {
       badge: "For Employers & Contractors",
-      title: "Build Your",
-      highlight: "Workforce",
+      title: "Build Your Workforce", 
+      highlight: "in 3 simple steps",
       subtitle: "Hire verified daily-wage workers, manage your projects, and route zero-middleman payouts safely using BharatWork.",
       btnText: "Start Hiring Now",
       icon: <FaBriefcase className="text-xl" />,
       stats: [
-        { icon: <FaUsers />, value: "50K+", label: "Verified Workers" },
-        { icon: <FaShieldAlt />, value: "100%", label: "Secure Payments" },
-        { icon: <FaStar />, value: "4.9", label: "App Rating" },
+        { icon: <FaUsers />,     value: "50K+", label: "Verified Workers" },
+        { icon: <FaShieldAlt />, value: "100%", label: "Secure Payments"  },
+        { icon: <FaStar />,      value: "4.9",  label: "App Rating"       },
+      ],
+      slides: [
+        { tabLabel: "Browse", image: step1Img },
+        { tabLabel: "Book", image: step2Img },
+        { tabLabel: "Build", image: step3Img }
       ]
     },
     labour: {
       badge: "For Workers & Agents",
-      title: "Secure Your",
-      highlight: "Livelihood",
+      title: "Secure Your Livelihood", 
+      highlight: "in 3 simple steps",
       subtitle: "Find verified daily-wage jobs, connect directly with contractors, and get safe payouts to your bank account.",
       btnText: "Find Work Now",
-      icon: <FaHardHat className="text-xl text-white" />,
+      icon: <FaHardHat className="text-xl" />,
       stats: [
-        { icon: <FaUsers />, value: "10K+", label: "Daily Jobs" },
-        { icon: <FaShieldAlt />, value: "24hr", label: "Payment" },
-        { icon: <FaStar />, value: "4.8", label: "Worker Rating" },
+        { icon: <FaUsers />,     value: "10K+", label: "Daily Jobs"   },
+        { icon: <FaShieldAlt />, value: "24hr", label: "Payment"      },
+        { icon: <FaStar />,      value: "4.8",  label: "Worker Rating"},
+      ],
+      slides: [
+        { tabLabel: "Browse", image: step1Img },
+        { tabLabel: "Book", image: step2Img },
+        { tabLabel: "Build", image: step3Img }
       ]
-    }
-  }[role];
+    },
+  }[activeRole];
 
   if (!content) return null;
 
   return (
     <section
       id="home"
-      className="relative pt-28 pb-20 lg:pt-36 lg:pb-28 overflow-hidden flex items-center min-h-screen"
+      className="relative pt-8 pb-20 lg:pt-12 lg:pb-28 overflow-hidden flex items-center min-h-[calc(100vh-5rem)]"
     >
-      {/* Enhanced Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-screen via-white to-screen"></div>
-
-      {/* Animated Gradient Orbs */}
-      <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-gradient-to-br from-action/20 via-orange-400/10 to-transparent rounded-full mix-blend-screen filter blur-[120px] opacity-60 animate-pulse"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-gradient-to-tl from-gradient-end/20 via-amber-400/10 to-transparent rounded-full mix-blend-screen filter blur-[100px] opacity-50"></div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-action/5 to-gradient-end/5 rounded-full filter blur-[150px]"></div>
-
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 opacity-[0.02]" style={{
-        backgroundImage: `linear-gradient(#EA580C 1px, transparent 1px), linear-gradient(90deg, #EA580C 1px, transparent 1px)`,
-        backgroundSize: '60px 60px'
-      }}></div>
+      {/* Background Gradients */}
+      <div className="absolute inset-0 bg-gradient-to-br from-screen via-white to-screen z-0" />
+      <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-gradient-to-br from-action/10 via-orange-400/5 to-transparent rounded-full filter blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-gradient-to-tl from-gradient-end/10 via-amber-400/5 to-transparent rounded-full filter blur-[100px] pointer-events-none" />
+      
+      {/* Grid Pattern overlay */}
+      <div
+        className="absolute inset-0 opacity-[0.02] pointer-events-none"
+        style={{
+          backgroundImage: `linear-gradient(#EE8311 1px,transparent 1px),linear-gradient(90deg,#EE8311 1px,transparent 1px)`,
+          backgroundSize: "60px 60px",
+        }}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Text Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          {/* ─────────────────────────────────────────────────────────────
+             LEFT COLUMN: Typography and Call to Action
+          ───────────────────────────────────────────────────────────── */}
           <motion.div
-            variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="order-2 xl:order-1"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.05 } }
+            }}
+            className="lg:col-span-7 flex flex-col items-start text-left"
           >
             {/* Badge */}
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-action/20 shadow-lg mb-8">
-              <span className="w-2 h-2 rounded-full bg-action animate-pulse"></span>
-              <span className="gradient-primary font-bold text-sm tracking-wider uppercase">
-                {content.badge}
-              </span>
+            <motion.div 
+              variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }} 
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-action/20 shadow-md mb-6"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-action animate-pulse" />
+              <span className="gradient-primary font-bold text-xs tracking-wider uppercase">{content.badge}</span>
             </motion.div>
 
-            {/* Headline */}
-            <motion.h1
-              variants={itemVariants}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold text-text-primary leading-[1.1] mb-6 tracking-tight"
+            {/* Heading */}
+            <motion.h1 
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} 
+              className="text-4xl md:text-5xl lg:text-6xl font-black text-text-primary leading-[1.1] mb-6 tracking-tight"
             >
               {content.title}{" "}
-              <span className="relative inline-block">
+              <span className="relative inline-block mt-1">
                 <span className="gradient-text-hero">{content.highlight}</span>
                 <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none">
-                  <path d="M2 10C50 2 150 2 198 10" stroke="#EA580C" strokeWidth="3" strokeLinecap="round" className="opacity-40"/>
+                  <path d="M2 10C50 2 150 2 198 10" stroke="#EE8311" strokeWidth="3" strokeLinecap="round" className="opacity-40" />
                 </svg>
               </span>
             </motion.h1>
 
             {/* Subtitle */}
-            <motion.p
-              variants={itemVariants}
-              className="text-xl md:text-2xl text-text-secondary mb-10 max-w-xl leading-relaxed"
+            <motion.p 
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} 
+              className="text-base md:text-lg text-text-secondary mb-8 max-w-2xl leading-relaxed"
             >
               {content.subtitle}
             </motion.p>
 
-            {/* CTA Buttons */}
-            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 mb-10">
-              <a
-                href="#download"
-                className="group relative flex items-center justify-center gap-3 bg-gradient-to-r from-action to-gradient-end text-white px-8 py-4 rounded-2xl font-bold text-lg overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-action/30 transition-all duration-300 hover:-translate-y-1"
+            {/* CTAs */}
+            <motion.div 
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} 
+              className="flex flex-col sm:flex-row gap-4 mb-10 w-full sm:w-auto"
+            >
+              <Link
+                to="/downloads"
+                className="group relative flex items-center justify-center gap-3 bg-gradient-to-r from-action to-gradient-end text-white px-8 py-4 rounded-2xl font-bold text-base overflow-hidden shadow-lg hover:shadow-xl hover:shadow-action/25 transition-all duration-300 hover:-translate-y-0.5"
               >
-                <span className="relative z-10 flex items-center gap-3">
-                  <span className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <span className="relative z-10 flex items-center gap-2.5">
+                  <span className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center group-hover:scale-105 transition-transform">
                     {content.icon}
                   </span>
                   {content.btnText}
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-gradient-end to-action opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              </a>
-
-              <button className="group flex items-center justify-center gap-3 px-8 py-4 rounded-2xl font-bold text-text-primary border-2 border-border-medium hover:border-action hover:text-action transition-all duration-300">
-                <span className="w-10 h-10 rounded-xl bg-action/10 flex items-center justify-center group-hover:bg-action group-hover:text-white transition-colors">
-                  <FaPlay className="text-sm ml-0.5" />
+                <div className="absolute inset-0 bg-gradient-to-r from-gradient-end to-action opacity-0 group-hover:opacity-100 transition-opacity" />
+              </Link>
+              <Link
+                to="/demopage"
+                className="group flex items-center justify-center gap-3 px-8 py-4 rounded-2xl font-bold text-text-primary border border-border-medium hover:border-action hover:text-action transition-all duration-300"
+              >
+                <span className="w-8 h-8 rounded-lg bg-action/10 flex items-center justify-center group-hover:bg-gradient-to-r group-hover:from-action group-hover:to-gradient-end group-hover:text-white transition-colors">
+                  <FaPlay className="text-xs ml-0.5" />
                 </span>
                 Watch Demo
-              </button>
+              </Link>
             </motion.div>
 
             {/* Stats */}
-            <motion.div variants={itemVariants} className="flex flex-wrap gap-8">
-              {content.stats.map((stat, idx) => (
-                <div key={idx} className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-action/10 to-gradient-end/10 flex items-center justify-center text-action">
-                    {stat.icon}
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-text-primary">{stat.value}</div>
-                    <div className="text-sm text-text-secondary">{stat.label}</div>
+            <motion.div 
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} 
+              className="flex flex-wrap gap-8 lg:gap-10 mb-8 border-t border-border-light pt-8 w-full max-w-xl"
+            >
+              {content.stats.map((s, i) => (
+                <div key={i} className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-action/10 to-gradient-end/10 flex items-center justify-center text-action shrink-0">{s.icon}</div>
+                  <div className="text-left">
+                    <div className="text-xl font-extrabold text-text-primary leading-none mb-0.5">{s.value}</div>
+                    <div className="text-xs text-text-secondary font-medium">{s.label}</div>
                   </div>
                 </div>
               ))}
             </motion.div>
 
-            {/* Mobile App Notice */}
-            <motion.div variants={itemVariants} className="mt-8 flex items-center gap-3 text-sm text-text-secondary bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full inline-flex border border-border-light">
-              <MdAndroid className="text-xl text-action" />
+            {/* Footer Badge */}
+            <motion.div 
+              variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }} 
+              className="inline-flex items-center gap-2.5 text-xs text-text-secondary bg-white/80 backdrop-blur-sm px-4.5 py-2.5 rounded-full border border-border-light shadow-sm"
+            >
+              <MdAndroid className="text-base text-action animate-bounce" />
               <span>Mobile Apps coming soon on <span className="font-semibold text-text-primary">Android & iOS</span></span>
             </motion.div>
           </motion.div>
 
-          {/* Hero Images */}
+          {/* ─────────────────────────────────────────────────────────────
+             RIGHT COLUMN: Interactive Step Slideshow (Minimalist Image & Tabs)
+          ───────────────────────────────────────────────────────────── */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 40 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.3, type: "spring", bounce: 0.2 }}
-            className="relative order-1 xl:order-2"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:col-span-5 w-full flex flex-col items-center"
           >
-            <div className="relative w-full max-w-[500px] mx-auto">
-              {/* Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-action/30 via-orange-400/20 to-amber-400/30 rounded-full blur-[80px] -z-10"></div>
-
-              {/* Phone Frame */}
-              <div className="relative">
-                {/* Left Phone */}
-                <motion.div
-                  whileHover={{ scale: 1.05, rotate: -5, zIndex: 30 }}
-                  className="absolute left-0 top-8 w-[45%] z-10"
-                >
-                  <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white bg-white">
-                    <img
-                      src={app2}
-                      alt="BharatWork Feature"
-                      className="w-full h-auto"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                  </div>
-                </motion.div>
-
-                {/* Right Phone */}
-                <motion.div
-                  whileHover={{ scale: 1.05, rotate: 5, zIndex: 30 }}
-                  className="absolute right-0 top-8 w-[45%] z-10"
-                >
-                  <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white bg-white">
-                    <img
-                      src={app3}
-                      alt="BharatWork Feature"
-                      className="w-full h-auto"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                  </div>
-                </motion.div>
-
-                {/* Center Phone (Main) */}
-                <motion.div
-                  whileHover={{ scale: 1.03, y: -10 }}
-                  className="relative z-20 mx-auto w-[55%]"
-                >
-                  <div className="relative rounded-[2.5rem] overflow-hidden shadow-[0_25px_60px_rgba(234,88,12,0.25)] border-4 border-white bg-white">
-                    <img
-                      src={app1}
-                      alt="BharatWork Experience"
-                      className="w-full h-auto"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-action/10 to-transparent"></div>
-
-                    {/* Screen Indicator */}
-                    <div className="absolute top-4 left-1/2 -translate-x-1/2 w-20 h-1.5 bg-gray-800 rounded-full"></div>
-                  </div>
-
-                  {/* Floating Badge */}
-                  <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 1, duration: 0.5 }}
-                    className="absolute -left-8 top-1/3 bg-white rounded-2xl shadow-xl p-3 border border-border-light"
-                  >
-                    <div className="flex items-center gap-2">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-action to-gradient-end flex items-center justify-center text-white">
-                        <FaUsers className="text-sm" />
-                      </div>
-                      <div>
-                        <div className="text-xs text-text-secondary">Active Now</div>
-                        <div className="font-bold text-text-primary">2,451</div>
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  {/* Success Badge */}
-                  <motion.div
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 1.2, duration: 0.5 }}
-                    className="absolute -right-4 bottom-1/4 bg-white rounded-2xl shadow-xl p-3 border border-border-light"
-                  >
-                    <div className="flex items-center gap-2">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-white">
-                        <FaShieldAlt className="text-sm" />
-                      </div>
-                      <div>
-                        <div className="text-xs text-text-secondary">Verified</div>
-                        <div className="font-bold text-text-primary">100%</div>
-                      </div>
-                    </div>
-                  </motion.div>
-                </motion.div>
+            <div className="w-full max-w-[420px] flex flex-col">
+              
+              {/* 1:1 Aspect-Square Slideshow Display Frame - Minimalist style */}
+              <div className="w-full aspect-square overflow-hidden rounded-[2rem] relative bg-orange-50/10 shadow-xl border border-border-light">
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={currentStep}
+                    src={content.slides[currentStep].image}
+                    alt={`Step ${currentStep + 1}`}
+                    initial={{ x: 80, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: -80, opacity: 0 }}
+                    transition={{ type: "spring", stiffness: 200, damping: 22 }}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </AnimatePresence>
               </div>
+
+              {/* Step Navigation Tabs with Progress Loaders - Browse, Book, Build */}
+              <div className="grid grid-cols-3 gap-3.5 mt-6 px-1 w-full">
+                {content.slides.map((slide, index) => {
+                  const isActive = currentStep === index;
+                  return (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentStep(index)}
+                      className="flex flex-col text-left group cursor-pointer focus:outline-none"
+                    >
+                      <span className={`text-[9px] font-black uppercase tracking-wider mb-0.5 transition-colors duration-200 ${
+                        isActive ? "text-action" : "text-text-tertiary group-hover:text-text-secondary"
+                      }`}>
+                        Step {index + 1}
+                      </span>
+                      <span className={`text-sm font-black leading-tight transition-colors duration-200 ${
+                        isActive ? "text-text-primary" : "text-text-secondary group-hover:text-text-primary"
+                      }`}>
+                        {slide.tabLabel}
+                      </span>
+                      
+                      {/* Active linear loader indicator bar */}
+                      <div className="w-full h-[3px] bg-border-medium rounded-full mt-2.5 overflow-hidden">
+                        <motion.div
+                          animate={{
+                            width: isActive ? "100%" : "0%"
+                          }}
+                          transition={{ duration: isActive ? 5 : 0.3, ease: "linear" }}
+                          className="h-full bg-action"
+                        />
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>

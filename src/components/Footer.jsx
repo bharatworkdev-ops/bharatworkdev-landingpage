@@ -1,167 +1,198 @@
 import React from "react";
-import logoImg from "../assets/logo.jpeg";
+import { Link } from "react-router-dom";
+import logoImg from "../assets/logo.svg";
 import {
   FaTwitter,
   FaLinkedinIn,
   FaInstagram,
-  FaGithub,
   FaEnvelope,
   FaPhoneAlt,
+  FaMapMarkerAlt,
 } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <footer
       id="footer"
-      className="bg-[#050d14] border-t border-border-light pt-16 pb-8"
+      className="bg-screen border-t border-border-medium/40 pt-16 pb-8"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-12">
           {/* Brand Col */}
-          <div className="col-span-1 md:col-span-1 border-b md:border-b-0 border-border-light pb-8 md:pb-0">
-            <a
-              href="#"
-              className="text-2xl font-bold tracking-tight text-text-primary flex items-center gap-3 mb-6"
+          <div className="flex flex-col space-y-6">
+            <Link
+              to="/"
+              className="flex items-center"
             >
               <img 
                 src={logoImg} 
                 alt="BharatWork Logo" 
-                className="w-10 h-10 rounded-full object-contain p-1 bg-white"
+                className="h-10 w-auto object-contain"
               />
-              BharatWork
-            </a>
-            <p className="text-sm text-text-secondary leading-relaxed mb-6">
-              India's AI-powered labour marketplace connecting workers with verified employers through technology, trust, and opportunity.
+            </Link>
+            <p className="text-sm text-text-secondary leading-relaxed">
+              India's AI-powered labour marketplace connecting manual workers with verified employers through technology, trust, and opportunity.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-card flex items-center justify-center text-text-secondary hover:bg-primary hover:text-text-action transition-colors"
+                className="w-9 h-9 rounded-full bg-card border border-border-medium/30 flex items-center justify-center text-text-secondary hover:bg-gradient-to-r hover:from-action hover:to-gradient-end hover:text-white transition-all shadow-sm"
               >
-                <FaTwitter size={18} />
+                <FaTwitter size={14} />
               </a>
               <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-card flex items-center justify-center text-text-secondary hover:bg-primary hover:text-text-action transition-colors"
+                href="https://www.linkedin.com/company/bharatwork/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-card border border-border-medium/30 flex items-center justify-center text-text-secondary hover:bg-gradient-to-r hover:from-action hover:to-gradient-end hover:text-white transition-all shadow-sm"
               >
-                <FaLinkedinIn size={18} />
+                <FaLinkedinIn size={14} />
               </a>
               <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-card flex items-center justify-center text-text-secondary hover:bg-primary hover:text-text-action transition-colors"
+                href="https://www.instagram.com/thebharatwork/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-card border border-border-medium/30 flex items-center justify-center text-text-secondary hover:bg-gradient-to-r hover:from-action hover:to-gradient-end hover:text-white transition-all shadow-sm"
               >
-                <FaInstagram size={18} />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-card flex items-center justify-center text-text-secondary hover:bg-primary hover:text-text-action transition-colors"
-              >
-                <FaGithub size={18} />
+                <FaInstagram size={14} />
               </a>
             </div>
           </div>
 
           {/* Quick Links Col */}
           <div>
-            <h4 className="text-text-primary font-bold mb-6 tracking-wide">
-              Product
+            <h4 className="text-text-primary font-bold mb-6 tracking-wider text-sm uppercase">
+              Platform
             </h4>
-            <ul className="space-y-4">
+            <ul className="space-y-3">
               <li>
-                <a
-                  href="about"
+                <Link
+                  to="/"
+                  className="text-text-secondary hover:text-action transition-colors text-sm"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/#features"
+                  className="text-text-secondary hover:text-action transition-colors text-sm"
+                >
+                  What is BharatWork?
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/downloads"
+                  className="text-text-secondary hover:text-action transition-colors text-sm"
+                >
+                  Download App
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/#faq"
+                  className="text-text-secondary hover:text-action transition-colors text-sm"
+                >
+                  FAQs
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Company Col */}
+          <div>
+            <h4 className="text-text-primary font-bold mb-6 tracking-wider text-sm uppercase">
+              Company
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <Link
+                  to="/about"
                   className="text-text-secondary hover:text-action transition-colors text-sm"
                 >
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#features"
+                <Link
+                  to="/blog"
                   className="text-text-secondary hover:text-action transition-colors text-sm"
                 >
-                  Features
-                </a>
+                  Blog & News
+                </Link>
               </li>
               <li>
-                <a
-                  href="#download"
+                <Link
+                  to="/contact"
                   className="text-text-secondary hover:text-action transition-colors text-sm"
                 >
-                  Download APK
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Resources Col */}
-          <div>
-            <h4 className="text-text-primary font-bold mb-6 tracking-wide">
-              Company
-            </h4>
-            <ul className="space-y-4">
-              <li>
-                <a
-                  href="team"
-                  className="text-text-secondary hover:text-action transition-colors text-sm"
-                >
-                  Our Team
-                </a>
+                  Contact Us
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  to="/privacy"
                   className="text-text-secondary hover:text-action transition-colors text-sm"
                 >
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  to="/terms"
                   className="text-text-secondary hover:text-action transition-colors text-sm"
                 >
                   Terms of Service
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
 
-          {/* Legal / Contact Col */}
+          {/* Contact Col */}
           <div>
-            <h4 className="text-text-primary font-bold mb-6 text-sm tracking-wide">
-              Contact Us
+            <h4 className="text-text-primary font-bold mb-6 tracking-wider text-sm uppercase">
+              Contact Support
             </h4>
             <ul className="space-y-4">
               <li>
                 <a
-                  href="mailto:info@thebharatwork.com"
-                  className="flex items-center gap-3 text-text-secondary hover:text-action transition-colors text-sm break-all"
+                  href="tel:+919454144272"
+                  className="flex items-center gap-3 text-text-secondary hover:text-action transition-colors text-sm group"
                 >
-                 <FaEnvelope className="text-lg" />
-                 <span>info@thebharatwork.com</span>
+                  <span className="w-8 h-8 rounded-full bg-card border border-border-medium/30 flex items-center justify-center group-hover:bg-action/10 transition-colors">
+                    <FaPhoneAlt size={12} className="text-text-secondary group-hover:text-action" />
+                  </span>
+                  <span>+91 9454144272</span>
                 </a>
               </li>
               <li>
-               <a
-                 href="tel:+919454144272"
-                 className="flex items-center gap-3 text-text-secondary hover:text-action transition-colors text-sm"
+                <a
+                  href="mailto:info@thebharatwork.com"
+                  className="flex items-center gap-3 text-text-secondary hover:text-action transition-colors text-sm group break-all"
                 >
-                 <FaPhoneAlt className="text-lg" />
-                 <span>+91 9454144272</span>
-               </a>
+                  <span className="w-8 h-8 rounded-full bg-card border border-border-medium/30 flex items-center justify-center group-hover:bg-action/10 transition-colors">
+                    <FaEnvelope size={12} className="text-text-secondary group-hover:text-action" />
+                  </span>
+                  <span>info@thebharatwork.com</span>
+                </a>
+              </li>
+              <li className="flex items-center gap-3 text-text-secondary text-sm">
+                <span className="w-8 h-8 rounded-full bg-card border border-border-medium/30 flex items-center justify-center shrink-0">
+                  <FaMapMarkerAlt size={12} className="text-text-secondary" />
+                </span>
+                <span>Lucknow, Uttar Pradesh, India</span>
               </li>
             </ul> 
           </div>
         </div>
 
         {/* Copyright */}
-        <div className="pt-8 border-t border-border-light flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-text-secondary text-xs text-center md:text-left">
-            &copy; {new Date().getFullYear()} BharatWork Inc. All rights
-            reserved.
+        <div className="pt-8 border-t border-border-medium/30 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-text-secondary text-xs text-center sm:text-left">
+            &copy; {new Date().getFullYear()} BharatWork (SOVQUE Pvt. Ltd.). All rights reserved.
           </p>
-          <div className="flex gap-6 text-xs text-text-secondary">
+          <div className="flex gap-4 text-xs text-text-secondary">
             <span>Made in India</span>
             <span>✦</span>
             <span>For the World</span>

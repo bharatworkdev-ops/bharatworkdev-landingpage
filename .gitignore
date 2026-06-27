@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Root-level duplicate images
+/*.png
+/BharatWork_Navbar.svg

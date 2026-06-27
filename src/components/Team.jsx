@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaLinkedinIn } from "react-icons/fa";
 
 const Team = () => {
   const teamMembers = [
@@ -8,12 +9,14 @@ const Team = () => {
       role: "Founder & CEO",
       description: "Visionary behind BharatWork. Dedicated to transforming the unorganized labor sector into a streamlined, transparent ecosystem.",
       image: "https://res.cloudinary.com/dgkmzddjv/image/upload/f_auto,q_auto/WhatsApp_Image_2026-03-22_at_6.30.29_PM_idkqfb.jpg",
+      linkedin: "https://www.linkedin.com/in/tejas-aggarwal-bharatwork",
     },
     {
       name: "Sarthak Upadhyay",
       role: "Co-Founder & CTO",
       description: "Operational leader ensuring seamless connections between daily wage workers, agents, and enterprise employers nationwide",
       image: "https://res.cloudinary.com/dgkmzddjv/image/upload/v1774187538/WhatsApp_Image_2026-03-22_at_6.16.21_PM_jk3nex.jpg",
+      linkedin: "https://www.linkedin.com/in/sarthak-upadhyay-bharatwork",
     }
   ];
 
@@ -57,7 +60,17 @@ const Team = () => {
               />
               <h4 className="text-xl font-bold text-text-primary mb-1">{member.name}</h4>
               <p className="text-action font-medium text-sm mb-4">{member.role}</p>
-              <p className="text-text-secondary text-sm leading-relaxed">{member.description}</p>
+              <p className="text-text-secondary text-sm leading-relaxed mb-6">{member.description}</p>
+              
+              <a 
+                href={member.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-action/10 hover:bg-gradient-to-r hover:from-action hover:to-gradient-end text-action hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm"
+                title="LinkedIn Profile"
+              >
+                <FaLinkedinIn />
+              </a>
             </motion.div>
           ))}
         </div>
