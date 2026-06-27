@@ -33,7 +33,7 @@ const Footer = () => {
               />
             </Link>
             <p className="text-sm text-text-secondary leading-relaxed">
-              India's AI-powered labour marketplace connecting manual workers with verified employers through technology, trust, and opportunity.
+              BharatWork is building the hiring infrastructure India's 450 million informal workers never had — verified, voice-first, and built for the real Bharat.
             </p>
             <div className="flex gap-3">
               <a
