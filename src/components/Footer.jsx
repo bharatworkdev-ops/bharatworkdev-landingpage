@@ -38,6 +38,7 @@ const Footer = () => {
             <div className="flex gap-3">
               <a
                 href="#"
+                aria-label="Twitter"
                 className="w-9 h-9 rounded-full bg-card border border-border-medium/30 flex items-center justify-center text-text-secondary hover:bg-gradient-to-r hover:from-action hover:to-gradient-end hover:text-white transition-all shadow-sm"
               >
                 <FaTwitter size={14} />
@@ -46,6 +47,7 @@ const Footer = () => {
                 href="https://www.linkedin.com/company/bharatwork/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn"
                 className="w-9 h-9 rounded-full bg-card border border-border-medium/30 flex items-center justify-center text-text-secondary hover:bg-gradient-to-r hover:from-action hover:to-gradient-end hover:text-white transition-all shadow-sm"
               >
                 <FaLinkedinIn size={14} />
@@ -54,6 +56,7 @@ const Footer = () => {
                 href="https://www.instagram.com/thebharatwork/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Instagram"
                 className="w-9 h-9 rounded-full bg-card border border-border-medium/30 flex items-center justify-center text-text-secondary hover:bg-gradient-to-r hover:from-action hover:to-gradient-end hover:text-white transition-all shadow-sm"
               >
                 <FaInstagram size={14} />
@@ -63,9 +66,9 @@ const Footer = () => {
 
           {/* Quick Links Col */}
           <div>
-            <h4 className="text-text-primary font-bold mb-6 tracking-wider text-sm uppercase">
+            <h3 className="text-text-primary font-bold mb-6 tracking-wider text-sm uppercase">
               Platform
-            </h4>
+            </h3>
             <ul className="space-y-3">
               <li>
                 <Link
@@ -112,9 +115,9 @@ const Footer = () => {
 
           {/* Company Col */}
           <div>
-            <h4 className="text-text-primary font-bold mb-6 tracking-wider text-sm uppercase">
+            <h3 className="text-text-primary font-bold mb-6 tracking-wider text-sm uppercase">
               Company
-            </h4>
+            </h3>
             <ul className="space-y-3">
               <li>
                 <Link
@@ -161,9 +164,9 @@ const Footer = () => {
 
           {/* Contact Col */}
           <div>
-            <h4 className="text-text-primary font-bold mb-6 tracking-wider text-sm uppercase">
+            <h3 className="text-text-primary font-bold mb-6 tracking-wider text-sm uppercase">
               Contact Support
-            </h4>
+            </h3>
             <ul className="space-y-4">
               <li>
                 <a

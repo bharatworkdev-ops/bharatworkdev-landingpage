@@ -24,8 +24,8 @@ def compress_images():
                 orig_size = os.path.getsize(input_path)
                 total_original += orig_size
                 
-                # Resize if extremely large (e.g. max width/height of 1000px)
-                max_dimension = 1000
+                # Resize if extremely large (e.g. max width/height of 760px)
+                max_dimension = 760
                 width, height = img.size
                 if width > max_dimension or height > max_dimension:
                     if width > height:

@@ -199,12 +199,4 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Hide scrollbar when at top of the page */
-html.hide-scrollbar::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
-}
-html.hide-scrollbar {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE 10+ */
-}
+

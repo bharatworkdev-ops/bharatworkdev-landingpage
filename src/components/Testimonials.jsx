@@ -40,12 +40,12 @@ const Testimonials = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-action font-semibold tracking-wide uppercase text-sm mb-2">
+            <span className="block text-action font-semibold tracking-wide uppercase text-sm mb-2">
               Wall of Love
-            </h2>
-            <h3 className="text-3xl md:text-5xl font-bold text-text-primary">
+            </span>
+            <h2 className="text-3xl md:text-5xl font-bold text-text-primary">
               Don't just take our word for it
-            </h3>
+            </h2>
           </motion.div>
         </div>
 

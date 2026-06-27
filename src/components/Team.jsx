@@ -30,12 +30,12 @@ const Team = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-action font-semibold tracking-wide uppercase text-sm mb-2">
+            <span className="block text-action font-semibold tracking-wide uppercase text-sm mb-2">
               Our Team
-            </h2>
-            <h3 className="text-3xl md:text-5xl font-bold text-text-primary mb-6">
+            </span>
+            <h2 className="text-3xl md:text-5xl font-bold text-text-primary mb-6">
               The Minds Behind <span className="text-transparent bg-clip-text bg-gradient-to-r from-action to-action/80">BharatWork</span>
-            </h3>
+            </h2>
             <p className="text-text-secondary max-w-2xl mx-auto text-lg leading-relaxed">
               We are a group of passionate individuals committed to bridging the gap in India's unorganized workforce sector. 
               Our mission is to create a transparent, reliable, and fair ecosystem for everyone.

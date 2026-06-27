@@ -59,19 +59,6 @@ function ScrollToHashElement() {
 }
 
 function App() {
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY === 0) {
-        document.documentElement.classList.add("hide-scrollbar");
-      } else {
-        document.documentElement.classList.remove("hide-scrollbar");
-      }
-    };
-    
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <HelmetProvider>

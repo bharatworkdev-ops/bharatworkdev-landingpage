@@ -229,6 +229,7 @@ const Navbar = () => {
                   <button
                     className="md:hidden relative w-10 h-10 flex items-center justify-center rounded-full bg-white/70 backdrop-blur-md shadow-lg border border-white/25 z-50"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                    aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
                   >
                     <AnimatePresence mode="wait">
                       {mobileMenuOpen ? (
