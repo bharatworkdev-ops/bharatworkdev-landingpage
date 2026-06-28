@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
   FaBriefcase, FaHardHat, FaPlay,
-  FaStar, FaUsers, FaShieldAlt
+  FaStar, FaUsers, FaShieldAlt, FaClock
 } from "react-icons/fa";
 import { MdAndroid } from "react-icons/md";
 
@@ -36,6 +36,7 @@ const Hero = ({ role }) => {
       stats: [
         { icon: <FaUsers />,     value: "1K+", label: "Verified Workers" },
         { icon: <FaShieldAlt />, value: "100%", label: "Secure Payments"  },
+        { icon: <FaClock />,     value: "10 Mins", label: "Workforce Ready" },
       ],
       slides: [
         { tabLabel: "Browse", image: step1Img },
