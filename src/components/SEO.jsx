@@ -23,7 +23,7 @@ const SEO = ({
   const defaultTitle = "BharatWork | Hire daily wage workers in minutes.";
   const defaultDescription = "BharatWork is an AI-powered labour hiring platform connecting verified daily wage workers with employers through voice-first and offline-first technology across India.";
   const defaultKeywords = "labour marketplace, daily wage workers, construction workers, hiring labour, blue collar jobs, worker hiring India, BharatWork";
-  const defaultOgImage = "/src/assets/logo.png";
+  const defaultOgImage = "/og-image.jpg";
 
   const metaTitle = title || defaultTitle;
   const metaDescription = description || defaultDescription;
