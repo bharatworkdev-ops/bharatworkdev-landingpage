@@ -57,7 +57,7 @@ const LandingPage = () => {
         "url": "https://thebharatwork.com",
         "name": "BharatWork",
         "alternateName": ["Bharat Work"],
-        "description": "AI-powered labour hiring platform connecting verified daily wage workers with employers.",
+        "description": "BharatWork connects employers with verified daily wage workers in minutes using voice-first AI. No apps or internet required on the worker's end.",
         "publisher": {
           "@id": "https://thebharatwork.com/#organization"
         },
@@ -108,7 +108,7 @@ const LandingPage = () => {
     <div className="bg-screen text-text-primary min-h-screen font-sans selection:bg-action/30 selection:text-action overflow-x-hidden pt-20 flex flex-col justify-between">
       <SEO 
         title="BharatWork | Hire daily wage workers in minutes."
-        description="BharatWork is an AI-powered labour hiring platform connecting verified daily wage workers with contractors and employers through voice-first technology across India."
+        description="BharatWork connects employers with verified daily wage workers in minutes using voice-first AI. No apps or internet required on the worker's end."
         schemaMarkup={schemaMarkup}
         faqMarkup={faqMarkup}
       />
