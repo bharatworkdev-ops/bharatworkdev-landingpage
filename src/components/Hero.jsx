@@ -36,7 +36,7 @@ const Hero = ({ role }) => {
       stats: [
         { icon: <FaUsers />,     value: "1K+", label: "Verified Workers" },
         { icon: <FaShieldAlt />, value: "100%", label: "Secure Payments"  },
-        { icon: <FaClock />,     value: "10 Mins", label: "Workforce Ready" },
+        { icon: <FaClock />,     value: "30 Mins", label: "Workforce Ready" },
       ],
       slides: [
         { tabLabel: "Browse", image: step1Img },
