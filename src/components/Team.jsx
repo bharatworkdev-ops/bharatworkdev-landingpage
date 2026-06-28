@@ -9,15 +9,16 @@ const Team = () => {
       role: "Founder & CEO",
       description: "Visionary behind BharatWork. Dedicated to transforming the unorganized labor sector into a streamlined, transparent ecosystem.",
       image: "https://res.cloudinary.com/dgkmzddjv/image/upload/f_auto,q_auto/WhatsApp_Image_2026-03-22_at_6.30.29_PM_idkqfb.jpg",
-      linkedin: "https://www.linkedin.com/in/tejas-aggarwal-bharatwork",
+      linkedin: "https://www.linkedin.com/in/tejas-agarwal-078877366/",
     },
     {
       name: "Sarthak Upadhyay",
       role: "Co-Founder & CTO",
-      description: "Operational leader ensuring seamless connections between daily wage workers, agents, and enterprise employers nationwide",
+      description: "Visionary technical leader scaling BharatWork's voice-first infrastructure and building tools to connect workforce agents with enterprise builders.",
       image: "https://res.cloudinary.com/dgkmzddjv/image/upload/v1774187538/WhatsApp_Image_2026-03-22_at_6.16.21_PM_jk3nex.jpg",
-      linkedin: "https://www.linkedin.com/in/sarthak-upadhyay-bharatwork",
+      linkedin: "https://www.linkedin.com/in/sarthak-upadhyay-6a709a292/",
     }
+
   ];
 
   return (
