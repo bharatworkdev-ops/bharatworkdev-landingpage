@@ -55,7 +55,7 @@ const AboutPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-screen text-text-primary font-sans overflow-x-hidden selection:bg-action/30 selection:text-action pt-20">
+    <div className="relative w-full min-h-screen bg-screen text-text-primary font-sans overflow-x-hidden selection:bg-action/30 selection:text-action pt-20">
       <SEO 
         title="About Us | BharatWork"
         description="Learn about the mission, values, and founders of BharatWork. We are building India's most accessible and inclusive blue-collar hiring platform."

@@ -105,7 +105,7 @@ const LandingPage = () => {
   ];
 
   return (
-    <div className="bg-screen text-text-primary min-h-screen font-sans selection:bg-action/30 selection:text-action overflow-x-hidden pt-20 flex flex-col justify-between">
+    <div className="relative w-full bg-screen text-text-primary min-h-screen font-sans selection:bg-action/30 selection:text-action overflow-x-hidden pt-20 flex flex-col justify-between">
       <SEO 
         title="BharatWork | Hire daily wage workers in minutes."
         description="BharatWork is an AI-powered labour hiring platform connecting verified daily wage workers with employers through voice-first and offline-first technology across India."

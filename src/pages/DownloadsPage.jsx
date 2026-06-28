@@ -38,7 +38,7 @@ const DownloadsPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-screen text-text-primary font-sans overflow-x-hidden selection:bg-action/30 selection:text-action pt-20 flex flex-col justify-between">
+    <div className="relative w-full min-h-screen bg-screen text-text-primary font-sans overflow-x-hidden selection:bg-action/30 selection:text-action pt-20 flex flex-col justify-between">
       <SEO 
         title="Download BharatWork App | BharatWork"
         description="Download the official BharatWork mobile app for employers and workers. Hire verified labour or find local daily-wage jobs in minutes."

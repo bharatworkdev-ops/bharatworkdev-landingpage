@@ -172,6 +172,7 @@
 
 body {
   margin: 0;
+  width: 100%;
   min-width: 320px;
   min-height: 100vh;
   overflow-x: hidden;
@@ -197,6 +198,7 @@ body {
 /* Smooth Scrolling */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 
