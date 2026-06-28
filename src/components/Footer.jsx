@@ -37,7 +37,9 @@ const Footer = () => {
             </p>
             <div className="flex gap-3">
               <a
-                href="#"
+                href="https://x.com/thebharatwork"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Twitter"
                 className="w-9 h-9 rounded-full bg-card border border-border-medium/30 flex items-center justify-center text-text-secondary hover:bg-gradient-to-r hover:from-action hover:to-gradient-end hover:text-white transition-all shadow-sm"
               >

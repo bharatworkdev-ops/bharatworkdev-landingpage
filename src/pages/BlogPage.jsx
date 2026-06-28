@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaCalendar, FaClock, FaAward, FaNewspaper, FaExternalLinkAlt } from "react-icons/fa";
+import { FaCalendar, FaClock, FaAward, FaNewspaper, FaExternalLinkAlt, FaTwitter } from "react-icons/fa";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
 
@@ -12,27 +12,39 @@ const BlogPage = () => {
   const actualBlogs = [
     {
       id: 1,
-      title: "Student Startup 'BharatWork' Wins GSEA Hyderabad Chapter Finals",
-      excerpt: "BharatWork, a voice-assisted, tech-enabled employment marketplace designed for the unorganized informal workforce, secures a cash prize of ₹1.5 Lakh and advances to the GSEA South Asia Finals.",
+      title: "IET Students' Startup Idea Wins ₹1.5L Award",
+      excerpt: "BharatWork, a voice-assisted tech-enabled employment marketplace designed for the unorganized informal workforce, secures a cash prize of ₹1.5 Lakh at Lucknow.",
       category: "Awards & Press",
       publisher: "Times of India",
       date: "March 14, 2026",
       readTime: "3 min read",
       image: gseaThumb,
-      link: "https://timesofindia.indiatimes.com/education/student-startup-bharatwork-wins-gsea-hyderabad-chapter-finals/articleshow/108502391.cms",
+      link: "https://timesofindia.indiatimes.com/city/lucknow/iet-students-startup-idea-wins-1-5l-award/articleshow/126552803.cms",
       icon: <FaAward className="text-xl text-action" />,
     },
     {
       id: 2,
-      title: "BharatWork Secures First Place in TiE U Startup Competition",
-      excerpt: "Demonstrating exceptional social impact and technological innovation, BharatWork wins the TiE U (The Indus Entrepreneurs) regional finals in Uttar Pradesh, highlighting its commitment to India's daily wage workers.",
-      category: "Milestones",
-      publisher: "The Edu Express",
+      title: "IET Student's Startup Idea Wins ₹1.5L Award",
+      excerpt: "Demonstrating exceptional social impact and technological innovation, BharatWork's milestone is featured on MSN News, detailing its commitment to India's daily wage workers.",
+      category: "Featured News",
+      publisher: "MSN News",
       date: "December 18, 2025",
       readTime: "2 min read",
       image: tieThumb,
-      link: "https://theeduexpress.com",
+      link: "https://www.msn.com/en-in/money/news/iet-student-s-startup-idea-wins-15l-award/ar-AA1UjOxG?apiversion=v2&domshim=1&noservercache=1&noservertelemetry=1&batchservertelemetry=1&renderwebcomponents=1&wcseo=1",
       icon: <FaNewspaper className="text-xl text-action" />,
+    },
+    {
+      id: 3,
+      title: "NIIF IET Lucknow Celebrates BharatWork Startup Success",
+      excerpt: "The New Era Innovation and Incubation Forum (NIIF) at IET Lucknow shares official recognition and regional milestones of BharatWork's social entrepreneurship model.",
+      category: "Incubation News",
+      publisher: "NIIF IET Lucknow",
+      date: "March 15, 2026",
+      readTime: "1 min read",
+      image: gseaThumb,
+      link: "https://x.com/NNFIET/status/1965412757735666007",
+      icon: <FaTwitter className="text-xl text-action" />,
     }
   ];
 
@@ -98,7 +110,7 @@ const BlogPage = () => {
           </div>
 
           {/* Grid Layout of Real Articles */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {actualBlogs.map((post, idx) => (
               <motion.article
                 key={post.id}
