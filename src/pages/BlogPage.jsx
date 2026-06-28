@@ -7,6 +7,7 @@ import SEO from "../components/SEO";
 // Import custom generated thumbnails
 import gseaThumb from "../assets/webp/gsea_award_thumb.webp";
 import tieThumb from "../assets/webp/tie_pitch_thumb.webp";
+import niifThumb from "../assets/webp/niif_award_thumb.webp";
 
 const BlogPage = () => {
   const actualBlogs = [
@@ -42,7 +43,7 @@ const BlogPage = () => {
       publisher: "NIIF IET Lucknow",
       date: "March 15, 2026",
       readTime: "1 min read",
-      image: gseaThumb,
+      image: niifThumb,
       link: "https://x.com/NNFIET/status/1965412757735666007",
       icon: <FaTwitter className="text-xl text-action" />,
     }
