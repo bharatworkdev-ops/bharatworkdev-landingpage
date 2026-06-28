@@ -349,7 +349,7 @@ const Services = () => {
                       }}
                       className="flex items-center gap-1.5 text-xs font-bold text-action transition-transform duration-200 hover:-translate-x-1 cursor-pointer"
                     >
-                      <FaArrowLeft className="text-[9px]" /> Collapse Details
+                      <FaArrowLeft className="text-[9px]" /> Back
                     </button>
                   ) : (
                     <div className="flex items-center gap-4">

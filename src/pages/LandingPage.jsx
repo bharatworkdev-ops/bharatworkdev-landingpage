@@ -56,9 +56,18 @@ const LandingPage = () => {
         "@id": "https://thebharatwork.com/#website",
         "url": "https://thebharatwork.com",
         "name": "BharatWork",
+        "alternateName": ["Bharat Work"],
         "description": "AI-powered labour hiring platform connecting verified daily wage workers with employers.",
         "publisher": {
           "@id": "https://thebharatwork.com/#organization"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://thebharatwork.com/jobs?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
         }
       }
     ]
@@ -98,7 +107,7 @@ const LandingPage = () => {
   return (
     <div className="bg-screen text-text-primary min-h-screen font-sans selection:bg-action/30 selection:text-action overflow-x-hidden pt-20 flex flex-col justify-between">
       <SEO 
-        title="BharatWork | AI-Powered Labour Hiring Platform"
+        title="BharatWork | Hire daily wage workers in minutes."
         description="BharatWork is an AI-powered labour hiring platform connecting verified daily wage workers with contractors and employers through voice-first technology across India."
         schemaMarkup={schemaMarkup}
         faqMarkup={faqMarkup}

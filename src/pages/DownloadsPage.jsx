@@ -1,12 +1,8 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import React from "react";
+import { motion } from "framer-motion";
 import { 
   FaGooglePlay, FaApple, FaBriefcase, FaHardHat, 
-  FaArrowRight, FaShieldAlt, FaUsers, FaStar,
-  FaPlusCircle, FaSearchLocation, FaRupeeSign,
-  FaClipboardCheck, FaChartLine, FaWallet,
-  FaBell, FaHistory, FaTimes
+  FaShieldAlt, FaUsers
 } from "react-icons/fa";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
@@ -15,9 +11,6 @@ import app2 from "../assets/webp/Screenshot_1782380984.webp";
 import app3 from "../assets/webp/Screenshot_1782381000.webp";
 
 const DownloadsPage = () => {
-  const navigate = useNavigate();
-  const [selectedPortal, setSelectedPortal] = useState(null);
-
   const employerTags = [
     "0% Fee",
     "KYC Verified",
@@ -28,72 +21,6 @@ const DownloadsPage = () => {
     "100% Wage",
     "Direct Pay",
     "Voice Jobs"
-  ];
-
-  const employerModalFeatures = [
-    {
-      icon: <FaPlusCircle />,
-      title: "Post Jobs Instantly",
-      description: "Create job postings in seconds with detailed requirements, location, and budget.",
-    },
-    {
-      icon: <FaSearchLocation />,
-      title: "Find Verified Workers",
-      description: "Browse through KYC-verified labour profiles with ratings and reviews.",
-    },
-    {
-      icon: <FaRupeeSign />,
-      title: "Secure Payments",
-      description: "Pay workers directly through the app with transaction records.",
-    },
-    {
-      icon: <FaClipboardCheck />,
-      title: "Track Projects",
-      description: "Monitor work progress, attendance, and completion status.",
-    },
-    {
-      icon: <FaChartLine />,
-      title: "Budget Management",
-      description: "Track expenses across multiple projects with labour cost insights.",
-    },
-    {
-      icon: <FaShieldAlt />,
-      title: "Verified & Trusted",
-      description: "All workers are background-verified with work history access.",
-    },
-  ];
-
-  const workerModalFeatures = [
-    {
-      icon: <FaBriefcase />,
-      title: "Find Jobs Near You",
-      description: "Discover daily wage jobs in your area with instant notifications.",
-    },
-    {
-      icon: <FaWallet />,
-      title: "Direct Payments",
-      description: "Get paid directly into your bank account with no middleman.",
-    },
-    {
-      icon: <FaStar />,
-      title: "Build Your Profile",
-      description: "Accumulate ratings and reviews for better job opportunities.",
-    },
-    {
-      icon: <FaBell />,
-      title: "Job Alerts",
-      description: "Receive instant notifications for new jobs in your area.",
-    },
-    {
-      icon: <FaHistory />,
-      title: "Work History",
-      description: "Track all your completed jobs, earnings, and work days.",
-    },
-    {
-      icon: <FaShieldAlt />,
-      title: "Secure & Verified",
-      description: "Work only with genuine employers and verified job postings.",
-    },
   ];
 
   const appSchema = {
@@ -131,7 +58,7 @@ const DownloadsPage = () => {
               Get Started with <span className="gradient-primary">BharatWork</span>
             </h1>
             <p className="text-text-secondary max-w-xl mx-auto text-base mb-8">
-              Access our digital portals directly or download the official mobile apps on your device.
+              Download the official mobile apps on your device.
             </p>
 
             {/* Central Arc Ratings & Stats */}
@@ -141,59 +68,13 @@ const DownloadsPage = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="flex flex-row items-center justify-center gap-6 sm:gap-12 md:gap-16 mb-6 bg-white/40 backdrop-blur-sm px-6 sm:px-10 py-5 rounded-3xl border border-border-medium/30 shadow-sm"
             >
-              {/* Active Users */}
+              {/* Active Workers */}
               <div className="text-center flex flex-col items-center">
                 <div className="flex items-center gap-1.5">
                   <FaUsers className="text-action text-sm sm:text-base shrink-0" />
-                  <span className="text-xl sm:text-2xl font-black text-text-primary leading-none">50K+</span>
+                  <span className="text-xl sm:text-2xl font-black text-text-primary leading-none">1K+</span>
                 </div>
-                <span className="text-[9px] sm:text-[10px] font-extrabold text-text-secondary uppercase tracking-wider mt-1.5">Active Users</span>
-              </div>
-
-              {/* Arc Rating Gauge */}
-              <div className="flex flex-col items-center justify-center relative px-2">
-                <svg viewBox="0 0 120 70" className="w-24 sm:w-28 h-18 sm:h-20 overflow-visible">
-                  <defs>
-                    <linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#F59E0B" />
-                      <stop offset="100%" stopColor="#EE8311" />
-                    </linearGradient>
-                  </defs>
-                  {/* Background Track */}
-                  <path
-                    d="M 15 60 A 45 45 0 0 1 105 60"
-                    fill="none"
-                    stroke="#E5E7EB"
-                    strokeWidth="8"
-                    strokeLinecap="round"
-                  />
-                  {/* Foreground Filled Arc */}
-                  <motion.path
-                    d="M 15 60 A 45 45 0 0 1 105 60"
-                    fill="none"
-                    stroke="url(#gaugeGradient)"
-                    strokeWidth="8"
-                    strokeLinecap="round"
-                    strokeDasharray="141.37"
-                    initial={{ strokeDashoffset: 141.37 }}
-                    animate={{ strokeDashoffset: 141.37 * (1 - 4.9 / 5) }}
-                    transition={{ duration: 1.2, ease: "easeOut", delay: 0.4 }}
-                  />
-                  {/* Score */}
-                  <text x="60" y="52" textAnchor="middle" className="text-2xl font-black fill-text-primary">
-                    4.9
-                  </text>
-                </svg>
-                
-                {/* Stars and Platform Tag under the Arc */}
-                <div className="flex flex-col items-center -mt-1 sm:-mt-1.5">
-                  <div className="flex text-amber-500 text-[8px] sm:text-[9px] gap-0.5 mb-0.5">
-                    <FaStar /><FaStar /><FaStar /><FaStar /><FaStar />
-                  </div>
-                  <span className="text-[8px] sm:text-[9px] font-black text-text-secondary uppercase tracking-widest leading-none">
-                    App Rating
-                  </span>
-                </div>
+                <span className="text-[9px] sm:text-[10px] font-extrabold text-text-secondary uppercase tracking-wider mt-1.5">Active Workers</span>
               </div>
 
               {/* KYC Verified */}
@@ -249,13 +130,6 @@ const DownloadsPage = () => {
 
                 {/* CTAs */}
                 <div className="space-y-4">
-                  <button
-                    onClick={() => navigate("/employer-info")}
-                    className="group w-full flex items-center justify-center gap-2 bg-gradient-to-r from-action to-gradient-end text-white px-5 py-3.5 rounded-xl font-bold transition-all shadow-lg hover:shadow-action/20 hover:-translate-y-0.5 text-sm cursor-pointer"
-                  >
-                    Access Employer Portal
-                    <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-                  </button>
 
                   <div className="flex gap-4">
                     <a
@@ -316,13 +190,6 @@ const DownloadsPage = () => {
 
                 {/* CTAs */}
                 <div className="space-y-4">
-                  <button
-                    onClick={() => setSelectedPortal("worker")}
-                    className="group w-full flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white px-5 py-3.5 rounded-xl font-bold transition-all shadow-lg hover:shadow-orange-500/20 hover:-translate-y-0.5 text-sm cursor-pointer"
-                  >
-                    Access Worker Portal
-                    <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-                  </button>
 
                   <div className="flex gap-4">
                     <a
@@ -464,94 +331,7 @@ const DownloadsPage = () => {
             </div>
           </motion.div>
 
-          {/* Portal Details Modal */}
-          <AnimatePresence>
-            {selectedPortal && (
-              <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-                {/* Backdrop */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  onClick={() => setSelectedPortal(null)}
-                  className="absolute inset-0 bg-black/60 backdrop-blur-md"
-                ></motion.div>
 
-                {/* Modal Content */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                  transition={{ type: "spring", duration: 0.5 }}
-                  className="relative bg-white rounded-3xl border border-border-medium/40 max-w-3xl w-full shadow-2xl overflow-hidden z-10 flex flex-col max-h-[90vh]"
-                >
-                  {/* Header Accent Bar */}
-                  <div className={`h-2 bg-gradient-to-r ${selectedPortal === "employer" ? "from-action to-gradient-end" : "from-amber-500 to-orange-500"}`}></div>
-
-                  {/* Close Button */}
-                  <button
-                    onClick={() => setSelectedPortal(null)}
-                    className="absolute top-4 right-4 w-10 h-10 rounded-full bg-screen hover:bg-border-light border border-border-medium/40 flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors cursor-pointer z-20"
-                  >
-                    <FaTimes />
-                  </button>
-
-                  <div className="p-6 sm:p-10 overflow-y-auto">
-                    {/* Header Info */}
-                    <div className="flex items-center gap-4 mb-8">
-                      <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${selectedPortal === "employer" ? "from-action to-gradient-end" : "from-amber-500 to-orange-500"} flex items-center justify-center text-white text-2xl shadow-lg shrink-0`}>
-                        {selectedPortal === "employer" ? <FaBriefcase /> : <FaHardHat />}
-                      </div>
-                      <div>
-                        <span className={`text-[10px] font-black uppercase tracking-widest ${selectedPortal === "employer" ? "text-action" : "text-amber-600"}`}>
-                          {selectedPortal === "employer" ? "Employer Portal" : "Worker Portal"}
-                        </span>
-                        <h3 className="text-2xl font-black text-text-primary leading-tight mt-0.5">
-                          {selectedPortal === "employer" ? "Hire Verified Labours" : "Earn Fair Wages"}
-                        </h3>
-                      </div>
-                    </div>
-
-                    {/* Features Grid */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                      {(selectedPortal === "employer" ? employerModalFeatures : workerModalFeatures).map((feature, idx) => (
-                        <div
-                          key={idx}
-                          className="bg-screen p-5 rounded-2xl border border-border-medium/30 flex items-start gap-4 hover:border-action/25 transition-all duration-300"
-                        >
-                          <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${selectedPortal === "employer" ? "from-action/10 to-gradient-end/10 text-action" : "from-amber-500/10 to-orange-500/10 text-amber-600"} flex items-center justify-center text-lg shrink-0 shadow-sm`}>
-                            {feature.icon}
-                          </div>
-                          <div>
-                            <h4 className="font-bold text-text-primary text-sm mb-1">{feature.title}</h4>
-                            <p className="text-text-secondary text-xs leading-relaxed">{feature.description}</p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Footer CTA */}
-                    <div className="flex flex-col sm:flex-row gap-4 items-center justify-between pt-6 border-t border-border-medium/30">
-                      <p className="text-text-secondary text-xs max-w-sm text-center sm:text-left">
-                        Ready to log in or register? Continue to the secure login screen.
-                      </p>
-                      <button
-                        onClick={() => {
-                          const path = selectedPortal === "employer" ? "/employer/auth/login" : "/labour/auth/login";
-                          setSelectedPortal(null);
-                          navigate(path);
-                        }}
-                        className={`w-full sm:w-auto group flex items-center justify-center gap-2 bg-gradient-to-r ${selectedPortal === "employer" ? "from-action to-gradient-end" : "from-amber-500 to-orange-500"} text-white px-6 py-3 rounded-xl font-bold transition-all shadow-lg hover:-translate-y-0.5 text-sm cursor-pointer`}
-                      >
-                        Proceed to Portal
-                        <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-                      </button>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-            )}
-          </AnimatePresence>
 
         </div>
       </main>

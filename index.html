@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="144x144" href="/favicon-144x144.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,7 +26,7 @@
     />
 
     <!-- SEO Meta Tags -->
-    <title>BharatWork | AI-Powered Labour Hiring Platform </title>
+    <title>BharatWork | Hire daily wage workers in minutes.</title>
     <meta
       name="description"
       content="BharatWork is an AI-powered labour hiring platform connecting verified daily wage workers with employers through voice-first and offline-first technology across India."
@@ -36,7 +41,7 @@
     <meta property="og:url" content="https://thebharatwork.com" />
     <meta
       property="og:title"
-      content="BharatWork |  AI-Powered Labour Hiring Platform"
+      content="BharatWork | Hire daily wage workers in minutes."
     />
     <meta
       property="og:description"
@@ -49,33 +54,51 @@
     <meta property="twitter:url" content="https://thebharatwork.com" />
     <meta
       property="twitter:title"
-      content="BharatWork | AI-Powered Labour Hiring Platform"
+      content="BharatWork | Hire daily wage workers in minutes."
     />
     <meta
       property="twitter:description"
-      content="BharatWork | AI-Powered Labour Hiring Platform"
+      content="BharatWork | Hire daily wage workers in minutes."
     />
     <meta property="twitter:image" content="/src/assets/og-image.png" />
 
     <!-- Structured Data JSON-LD -->
     <script type="application/ld+json">
     {
-     "@context": "https://schema.org",
-     "@type": "Organization",
-     "name": "BharatWork",
-     "legalName": "SOVQUE PVT LTD",
-     "url": "https://thebharatwork.com",
-     "description": "AI-powered labour hiring platform connecting workers and employers",
-     "founder": [
-      {
-       "@type": "Person",
-       "name": "Tejas Agarwal"
-      },
-      {
-       "@type": "Person",
-       "name": "Sarthak Upadhyay"
-      }
-     ]
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "BharatWork",
+          "legalName": "SOVQUE PVT LTD",
+          "url": "https://thebharatwork.com",
+          "description": "AI-powered labour hiring platform connecting workers and employers",
+          "founder": [
+            {
+              "@type": "Person",
+              "name": "Tejas Agarwal"
+            },
+            {
+              "@type": "Person",
+              "name": "Sarthak Upadhyay"
+            }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "url": "https://thebharatwork.com",
+          "name": "BharatWork",
+          "alternateName": ["Bharat Work"],
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://thebharatwork.com/jobs?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        }
+      ]
     }
     </script>
   </head>

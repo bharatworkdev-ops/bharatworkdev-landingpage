@@ -36,7 +36,6 @@ const Hero = ({ role }) => {
       stats: [
         { icon: <FaUsers />,     value: "1K+", label: "Verified Workers" },
         { icon: <FaShieldAlt />, value: "100%", label: "Secure Payments"  },
-        { icon: <FaStar />,      value: "4.9",  label: "App Rating"       },
       ],
       slides: [
         { tabLabel: "Browse", image: step1Img },
@@ -92,11 +91,6 @@ const Hero = ({ role }) => {
              LEFT COLUMN: Typography and Call to Action
           ───────────────────────────────────────────────────────────── */}
           <div className="lg:col-span-7 flex flex-col items-start text-left">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-action/20 shadow-md mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-action animate-pulse" />
-              <span className="gradient-primary font-bold text-xs tracking-wider uppercase">{content.badge}</span>
-            </div>
 
             {/* Heading */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-text-primary leading-[1.1] mb-6 tracking-tight">
@@ -152,11 +146,7 @@ const Hero = ({ role }) => {
               ))}
             </div>
 
-            {/* Footer Badge */}
-            <div className="inline-flex items-center gap-2.5 text-xs text-text-secondary bg-white/80 backdrop-blur-sm px-4.5 py-2.5 rounded-full border border-border-light shadow-sm">
-              <MdAndroid className="text-base text-action animate-bounce" />
-              <span>Mobile Apps coming soon on <span className="font-semibold text-text-primary">Android & iOS</span></span>
-            </div>
+
           </div>
 
           {/* ─────────────────────────────────────────────────────────────

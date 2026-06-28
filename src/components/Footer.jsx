@@ -124,7 +124,7 @@ const Footer = () => {
                   to="/about"
                   className="text-text-secondary hover:text-action transition-colors text-sm"
                 >
-                  Company
+                  About Us
                 </Link>
               </li>
               <li>

@@ -20,7 +20,7 @@ const SEO = ({
   const canonicalUrl = `${baseUrl}${location.pathname}${location.search}`;
 
   // Default values
-  const defaultTitle = "BharatWork | AI-Powered Labour Hiring Platform";
+  const defaultTitle = "BharatWork | Hire daily wage workers in minutes.";
   const defaultDescription = "BharatWork is an AI-powered labour hiring platform connecting verified daily wage workers with employers through voice-first and offline-first technology across India.";
   const defaultKeywords = "labour marketplace, daily wage workers, construction workers, hiring labour, blue collar jobs, worker hiring India, BharatWork";
   const defaultOgImage = "/src/assets/logo.png";
@@ -29,6 +29,42 @@ const SEO = ({
   const metaDescription = description || defaultDescription;
   const metaKeywords = keywords || defaultKeywords;
   const metaOgImage = ogImage ? (ogImage.startsWith("http") ? ogImage : `${baseUrl}${ogImage}`) : `${baseUrl}${defaultOgImage}`;
+
+  // Generate Breadcrumbs Schema
+  let breadcrumbSchema = null;
+  const pathSegments = location.pathname.split("/").filter(Boolean);
+  if (pathSegments.length > 0) {
+    const itemListElement = [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": baseUrl,
+      }
+    ];
+
+    let currentUrl = baseUrl;
+    pathSegments.forEach((segment, index) => {
+      currentUrl += `/${segment}`;
+      const cleanName = segment
+        .split("-")
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+
+      itemListElement.push({
+        "@type": "ListItem",
+        "position": index + 2,
+        "name": cleanName,
+        "item": currentUrl,
+      });
+    });
+
+    breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": itemListElement,
+    };
+  }
 
   return (
     <Helmet>
@@ -55,6 +91,13 @@ const SEO = ({
       {schemaMarkup && (
         <script type="application/ld+json">
           {JSON.stringify(schemaMarkup)}
+        </script>
+      )}
+
+      {/* Breadcrumb List Schema */}
+      {breadcrumbSchema && (
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
         </script>
       )}
 
