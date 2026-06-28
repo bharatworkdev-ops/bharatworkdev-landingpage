@@ -22,7 +22,8 @@ const SEO = ({
   // Default values
   const defaultTitle = "BharatWork | Hire daily wage workers in minutes.";
   const defaultDescription = "BharatWork is an AI-powered labour hiring platform connecting verified daily wage workers with employers through voice-first and offline-first technology across India.";
-  const defaultKeywords = "labour marketplace, daily wage workers, construction workers, hiring labour, blue collar jobs, worker hiring India, BharatWork";
+  const defaultKeywords = "hire labour online, construction workers near me, labour contractor alternative, daily wage workers, helper jobs, painter jobs, electrician jobs, plumber jobs, labour hiring app, blue collar hiring platform, workforce management, labour marketplace, construction hiring platform, hire helpers in Lucknow, hire labour in Uttar Pradesh, labour app India, skilled workers platform, warehouse workers, loading unloading workers, housekeeping workers, bharatwork, bharat work, thebharatwork";
+
   const defaultOgImage = "/og-image.jpg";
 
   const metaTitle = title || defaultTitle;

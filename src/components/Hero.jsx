@@ -30,7 +30,7 @@ const Hero = ({ role }) => {
       badge: "For Employers & Contractors",
       title: "Hire Your Workforce", 
       highlight: "in 3 simple steps",
-      subtitle: "Hire verified daily-wage workers, manage your projects, and route zero-middleman payouts safely using BharatWork.",
+      subtitle: "The ultimate labour contractor alternative and blue collar hiring platform. Hire daily wage workers, helpers, painters, plumbers, and electricians online, and handle workforce management with direct payouts.",
       btnText: "Start Hiring Now",
       icon: <FaBriefcase className="text-xl" />,
       stats: [
@@ -48,7 +48,7 @@ const Hero = ({ role }) => {
       badge: "For Workers & Agents",
       title: "Secure Your Livelihood", 
       highlight: "in 3 simple steps",
-      subtitle: "Find verified daily-wage jobs, connect directly with contractors, and get safe payouts to your bank account.",
+      subtitle: "Find daily wage jobs for helpers, painters, electricians, plumbers, and warehouse workers. Connect directly with employers and get secure payouts.",
       btnText: "Find Work Now",
       icon: <FaHardHat className="text-xl" />,
       stats: [
@@ -62,6 +62,7 @@ const Hero = ({ role }) => {
         { tabLabel: "Build", image: step3Img }
       ]
     },
+
   }[activeRole];
 
   if (!content) return null;

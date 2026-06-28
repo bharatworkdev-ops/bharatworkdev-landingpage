@@ -33,14 +33,15 @@ const Services = () => {
       title: "Helper",
       image: helperImg,
       icon: <FaHandsHelping className="text-xl" />,
-      desc: "Assisting with daily tasks, site cleanups, material movement, and general utility support.",
+      desc: "Assisting with daily tasks, site cleanups, housekeeping chores, material movement, and general utility support.",
       offers: [
         "General assistant support for daily site chores",
-        "Debris removal and site cleanup",
+        "Debris removal, housekeeping, and site cleanup",
         "Material sorting and movement",
         "Direct peer-to-peer hiring with no markup"
       ],
       gradient: "from-amber-500 to-orange-500",
+
       accent: "amber",
       shadow: "rgba(245, 158, 11, 0.15)",
     },
