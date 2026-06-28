@@ -28,7 +28,7 @@ const Hero = ({ role }) => {
   const content = {
     employer: {
       badge: "For Employers & Contractors",
-      title: "Build Your Workforce", 
+      title: "Hire Your Workforce", 
       highlight: "in 3 simple steps",
       subtitle: "Hire verified daily-wage workers, manage your projects, and route zero-middleman payouts safely using BharatWork.",
       btnText: "Start Hiring Now",
