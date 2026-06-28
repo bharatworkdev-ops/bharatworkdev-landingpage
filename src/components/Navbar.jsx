@@ -97,10 +97,10 @@ const Navbar = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-        className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${
+        className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 w-[92%] md:w-full ${
           isScrolled || isDashboard || isAuthPage
-            ? "top-4 w-[95%] max-w-7xl bg-white/70 backdrop-blur-lg border border-white/25 shadow-xl shadow-action/5 py-3 rounded-full"
-            : "top-0 w-full max-w-full bg-transparent backdrop-blur-none border-transparent shadow-none py-6 rounded-none"
+            ? "top-3 md:top-4 md:w-[95%] max-w-7xl bg-white/85 md:bg-white/70 backdrop-blur-lg border border-white/20 md:border-white/25 shadow-xl shadow-action/5 py-2.5 md:py-3 rounded-full"
+            : "top-3 md:top-0 md:max-w-full bg-white/85 md:bg-transparent md:backdrop-blur-none md:border-transparent md:shadow-none py-2.5 md:py-6 rounded-full md:rounded-none"
         }`}
       >
         <div className="max-w-7xl mx-auto w-full px-6 sm:px-8">
@@ -269,7 +269,7 @@ const Navbar = () => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -20, scale: 0.95 }}
               transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="md:hidden absolute top-full left-4 right-4 mt-2 bg-white/80 backdrop-blur-lg rounded-3xl shadow-2xl shadow-action/10 border border-white/20 overflow-hidden"
+              className="md:hidden absolute top-full left-0 right-0 mt-2 bg-white/90 backdrop-blur-lg rounded-3xl shadow-2xl shadow-action/10 border border-white/20 overflow-hidden"
             >
               <div className="p-6">
                 {/* Mobile Nav Links */}
