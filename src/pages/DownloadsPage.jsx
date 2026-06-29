@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { 
   FaGooglePlay, FaApple, FaBriefcase, FaHardHat, 
-  FaShieldAlt, FaUsers
+  FaShieldAlt, FaUsers, FaAndroid
 } from "react-icons/fa";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
@@ -146,6 +146,14 @@ const DownloadsPage = () => {
                       <FaApple className="text-xs" />
                       App Store
                     </a>
+                    <a
+                      href="/downloads/Bharatwork.apk"
+                      download="Bharatwork.apk"
+                      className="flex-1 flex items-center justify-center gap-2 px-3 py-3 rounded-xl border border-border-medium text-text-secondary font-bold hover:border-action hover:bg-action/5 hover:text-action transition-all duration-300 text-xs"
+                    >
+                      <FaAndroid className="text-xs" />
+                      Download APK
+                    </a>
                   </div>
                 </div>
               </div>
@@ -205,6 +213,14 @@ const DownloadsPage = () => {
                     >
                       <FaApple className="text-xs" />
                       App Store
+                    </a>
+                    <a
+                      href="/downloads/BharatWork-Agent/Labour.apk"
+                      download="Labour.apk"
+                      className="flex-1 flex items-center justify-center gap-2 px-3 py-3 rounded-xl border border-border-medium text-text-secondary font-bold hover:border-amber-500 hover:bg-amber-500/5 hover:text-amber-600 transition-all duration-300 text-xs"
+                    >
+                      <FaAndroid className="text-xs" />
+                      Download APK
                     </a>
                   </div>
                 </div>
