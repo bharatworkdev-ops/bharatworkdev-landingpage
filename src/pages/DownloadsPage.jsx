@@ -131,17 +131,17 @@ const DownloadsPage = () => {
                 {/* CTAs */}
                 <div className="space-y-4">
 
-                  <div className="flex gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     <a
                       href="#"
-                      className="flex-1 flex items-center justify-center gap-2 px-3 py-3 rounded-xl border border-border-medium text-text-secondary font-bold hover:border-action hover:bg-action/5 hover:text-action transition-all duration-300 text-xs"
+                      className="flex items-center justify-center gap-2 px-3 py-3 rounded-xl border border-border-medium text-text-secondary font-bold hover:border-action hover:bg-action/5 hover:text-action transition-all duration-300 text-xs"
                     >
                       <FaGooglePlay className="text-xs" />
                       Google Play
                     </a>
                     <a
                       href="#"
-                      className="flex-1 flex items-center justify-center gap-2 px-3 py-3 rounded-xl border border-border-medium text-text-secondary font-bold hover:border-action hover:bg-action/5 hover:text-action transition-all duration-300 text-xs"
+                      className="flex items-center justify-center gap-2 px-3 py-3 rounded-xl border border-border-medium text-text-secondary font-bold hover:border-action hover:bg-action/5 hover:text-action transition-all duration-300 text-xs"
                     >
                       <FaApple className="text-xs" />
                       App Store
@@ -149,7 +149,7 @@ const DownloadsPage = () => {
                     <a
                       href="/downloads/Bharatwork.apk"
                       download="Bharatwork.apk"
-                      className="flex-1 flex items-center justify-center gap-2 px-3 py-3 rounded-xl border border-border-medium text-text-secondary font-bold hover:border-action hover:bg-action/5 hover:text-action transition-all duration-300 text-xs"
+                      className="flex items-center justify-center gap-2 px-3 py-3 rounded-xl border border-border-medium text-text-secondary font-bold hover:border-action hover:bg-action/5 hover:text-action transition-all duration-300 text-xs"
                     >
                       <FaAndroid className="text-xs" />
                       Download APK
@@ -199,17 +199,17 @@ const DownloadsPage = () => {
                 {/* CTAs */}
                 <div className="space-y-4">
 
-                  <div className="flex gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     <a
                       href="#"
-                      className="flex-1 flex items-center justify-center gap-2 px-3 py-3 rounded-xl border border-border-medium text-text-secondary font-bold hover:border-amber-500 hover:bg-amber-500/5 hover:text-amber-600 transition-all duration-300 text-xs"
+                      className="flex items-center justify-center gap-2 px-3 py-3 rounded-xl border border-border-medium text-text-secondary font-bold hover:border-amber-500 hover:bg-amber-500/5 hover:text-amber-600 transition-all duration-300 text-xs"
                     >
                       <FaGooglePlay className="text-xs" />
                       Google Play
                     </a>
                     <a
                       href="#"
-                      className="flex-1 flex items-center justify-center gap-2 px-3 py-3 rounded-xl border border-border-medium text-text-secondary font-bold hover:border-amber-500 hover:bg-amber-500/5 hover:text-amber-600 transition-all duration-300 text-xs"
+                      className="flex items-center justify-center gap-2 px-3 py-3 rounded-xl border border-border-medium text-text-secondary font-bold hover:border-amber-500 hover:bg-amber-500/5 hover:text-amber-600 transition-all duration-300 text-xs"
                     >
                       <FaApple className="text-xs" />
                       App Store
@@ -217,7 +217,7 @@ const DownloadsPage = () => {
                     <a
                       href="/downloads/BharatWork-Agent/Labour.apk"
                       download="Labour.apk"
-                      className="flex-1 flex items-center justify-center gap-2 px-3 py-3 rounded-xl border border-border-medium text-text-secondary font-bold hover:border-amber-500 hover:bg-amber-500/5 hover:text-amber-600 transition-all duration-300 text-xs"
+                      className="flex items-center justify-center gap-2 px-3 py-3 rounded-xl border border-border-medium text-text-secondary font-bold hover:border-amber-500 hover:bg-amber-500/5 hover:text-amber-600 transition-all duration-300 text-xs"
                     >
                       <FaAndroid className="text-xs" />
                       Download APK
