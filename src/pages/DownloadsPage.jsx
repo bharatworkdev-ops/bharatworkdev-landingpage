@@ -215,8 +215,8 @@ const DownloadsPage = () => {
                       App Store
                     </a>
                     <a
-                      href="/downloads/BharatWork-Agent/Labour.apk"
-                      download="Labour.apk"
+                      href="/downloads/BharatWork - Agent - Labour.apk"
+                      download="BharatWork - Agent - Labour.apk"
                       className="flex items-center justify-center gap-2 px-3 py-3 rounded-xl border border-border-medium text-text-secondary font-bold hover:border-amber-500 hover:bg-amber-500/5 hover:text-amber-600 transition-all duration-300 text-xs"
                     >
                       <FaAndroid className="text-xs" />
